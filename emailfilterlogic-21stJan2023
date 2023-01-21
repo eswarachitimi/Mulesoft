@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:http="http://www.mulesoft.org/schema/mule/http"
+	xmlns:ee="http://www.mulesoft.org/schema/mule/ee/core"
+	xmlns="http://www.mulesoft.org/schema/mule/core"
+	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/ee/core http://www.mulesoft.org/schema/mule/ee/core/current/mule-ee.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd">
+	<http:request-config
+		name="Dummy_HTTP_Request_configuration"
+		doc:name="HTTP Request configuration"
+		doc:id="c71fa938-6e73-4cef-8171-35deafbee8e9">
+		<http:request-connection host="0.0.0.0"
+			port="8092" />
+	</http:request-config>
+	<http:request-config
+		name="Emails_Filter_HTTP_Request_configuration"
+		doc:name="HTTP Request configuration"
+		doc:id="c39be662-80de-4b2d-8806-6f9b11ee6ae5">
+		<http:request-connection host="0.0.0.0"
+			port="8082" />
+	</http:request-config>
+	<http:request-config
+		name="Authentication_HTTP_Request_configuration"
+		doc:name="HTTP Request configuration"
+		doc:id="eb9ea209-68c8-4e43-83eb-d81f08539de7">
+		<http:request-connection host="0.0.0.0"
+			port="8082" />
+	</http:request-config>
+	<flow name="email-filterFlow"
+		doc:id="451580a2-40f2-4fee-9b09-9e0957919a4e">
+		<scheduler doc:name="Scheduler"
+			doc:id="3cc7ff87-3a63-4baf-a21b-0dc39b62ebe2">
+			<scheduling-strategy>
+				<fixed-frequency frequency="2" timeUnit="MINUTES" />
+			</scheduling-strategy>
+		</scheduler>
+		<ee:transform doc:name="Forming Authorization Payload"
+			doc:id="8b6fa427-0de1-4c81-8658-374b5ad2c608">
+			<ee:message>
+				<ee:set-payload><![CDATA[%dw 2.0
+output application/x-www-form-urlencoded
+---
+{
+	"grant_type": "client_credenctials",
+	"client_id": "6731de76-14a6-49ae-97bc-6eba6914391e",
+	"client_secret": "JqQX2PNo9bpM0uEihUPzyrh",
+	"scope": "",
+}]]></ee:set-payload>
+			</ee:message>
+		</ee:transform>
+		<http:request method="GET"
+			doc:name="Authorization Requester"
+			doc:id="5cac8f4f-83e9-4064-9c01-1fd91d8b7cda"
+			config-ref="Authentication_HTTP_Request_configuration" path="/tokens" />
+		<scatter-gather doc:name="Scatter-Gather"
+			doc:id="2eb253bb-02df-4297-8f54-1a4435870b54">
+			<route>
+				<ee:transform
+					doc:name="filterEmailsWithOutAttachmentsPath Variable"
+					doc:id="e7c9e8c6-1d2d-4532-bd0c-a9fb7f1f2d5d">
+					<ee:message>
+					</ee:message>
+					<ee:variables>
+						<ee:set-variable
+							variableName="filterEmailsWithOutAttachmentsPath"><![CDATA[%dw 2.0
+output application/java
+var dateTime = (now() as String {format: "yyyy-MM-dd'T'HH:mm:ss'Z'"})
+var emailAddresses = "abcd@gmail.com,xyz@outlook.com,saik@rediff.com"
+var fromEmailPath = "from/emailAddress/address eq "
+fun emails(emailAddresses: String) = emailAddresses splitBy(",")
+fun dynamicFromEmailString (emailsList) = (emailsList map (fromEmailPath ++ "'" ++ $ ++ "'")) reduce ($ ++ " or " ++ $$)
+---
+"receivedDateTime ge " ++ (dateTime - |PT4H|) ++ " and receivedDateTime le " ++ dateTime ++ " and isRead eq false and (" ++ dynamicFromEmailString(emails(emailAddresses)) ++ ")"]]></ee:set-variable>
+					</ee:variables>
+				</ee:transform>
+				<http:request method="GET"
+					doc:name="HTTP Requester to filter the emails"
+					doc:id="6793c275-f791-458e-bebb-f11f0c7daed0"
+					config-ref="Emails_Filter_HTTP_Request_configuration"
+					path="#[vars.emailsFilterWithOutAttachmentsPath]" />
+			</route>
+			<route>
+				<ee:transform
+					doc:name="filterEmailAttachmentsPath Variable"
+					doc:id="7b54b96d-0ba6-4319-aa88-94fb4f4d667a">
+					<ee:message>
+					</ee:message>
+					<ee:variables>
+						<ee:set-variable
+							variableName="filterEmailAttachmentsPath"><![CDATA[%dw 2.0
+output application/java
+var dateTime = (now() as String {format: "yyyy-MM-dd'T'HH:mm:ss'Z'"})
+---
+"\$top=2 & \$filter=receivedDateTime ge " ++ (dateTime - |PT4H|) ++ " and receivedDateTime le " ++ dateTime ++ " and hasattachments eq true and (contains(subject,'PREDELIVERYORDER') or contains(subject,'Electronic Delivery Order')) and isRead eq false"]]></ee:set-variable>
+					</ee:variables>
+				</ee:transform>
+				<flow-ref
+					doc:name="Calling filter-emails-which-has-attachments-recurring-sub-flow"
+					doc:id="c31ee0ef-4141-44d3-bb3f-b02793bdbf85"
+					name="filter-emails-which-has-attachments-recurring-sub-flow" />
+			</route>
+		</scatter-gather>
+	</flow>
+	<sub-flow
+		name="filter-emails-which-has-attachments-recurring-sub-flow"
+		doc:id="21ee3fa0-ebeb-4786-a9e2-27200afdd266">
+		<http:request method="GET"
+			doc:name="HTTP Requester to filter the emails attachments"
+			doc:id="e2b49c83-5ca2-45b1-8b97-c62a90ae6c35"
+			config-ref="Emails_Filter_HTTP_Request_configuration"
+			path="#[vars.filterEmailAttachmentsPath]">
+			<http:headers><![CDATA[#[output application/java
+---
+{
+	"Authorization" : "Bearer <access_token>"
+}]]]></http:headers>
+		</http:request>
+		<foreach doc:name="For Each"
+			doc:id="e37aedf5-8034-40df-8ae5-f576558a8554"
+			collection="#[payload.value]">
+			<ee:transform
+				doc:name="Extracting attachment content from email"
+				doc:id="cd04bfae-cd55-40f6-8f2d-553ba90332a6">
+				<ee:message>
+					<ee:set-payload><![CDATA[%dw 2.0
+import fromBase64 from dw::core::Binaries
+output application/java
+---
+fromBase64(payload.Body.id)]]></ee:set-payload>
+				</ee:message>
+				<ee:variables>
+					<ee:set-variable variableName="nextLinkVariable"><![CDATA[%dw 2.0
+output application/java
+---
+payload.'odata.nextLink']]></ee:set-variable>
+				</ee:variables>
+			</ee:transform>
+			<choice doc:name="Choice"
+				doc:id="c629715b-a3d9-4a77-8cfe-2543d829d15e">
+				<when
+					expression='#[payload contains ("DELIVERY NOTIFICATION")]'>
+					<http:request method="GET"
+						doc:name="Calling Delivery Notification Endpoint"
+						doc:id="4dec23e5-4f3c-442b-a2f8-d011d59c5fea"
+						config-ref="Dummy_HTTP_Request_configuration"
+						path="/deliveryNotificationPath" />
+				</when>
+				<otherwise>
+					<http:request method="POST"
+						doc:name="Calling Pre-Delivery Notification Endpoint"
+						doc:id="2d7e5ccc-7adc-4064-8f14-e961b520f862"
+						path="/preDeliveryNotificationPath"
+						config-ref="Dummy_HTTP_Request_configuration" />
+				</otherwise>
+			</choice>
+		</foreach>
+		<choice doc:name="Choice"
+			doc:id="a4b65a48-a704-47d3-ae0f-a50c30895777">
+			<when expression="#[isBlank(vars.nextLinkVariable)]">
+				<logger level="INFO" doc:name="Logger"
+					doc:id="fba05615-e879-4e6c-844d-5ae130abfc48"
+					message="No Email attachments available to filter at this time" />
+			</when>
+			<otherwise>
+				<ee:transform
+					doc:name="filterEmailAttachmentsPath Variable"
+					doc:id="86f890af-b8c4-4518-b47c-b05067408a18">
+					<ee:message>
+					</ee:message>
+					<ee:variables>
+						<ee:set-variable
+							variableName="filterEmailAttachmentsPath"><![CDATA[%dw 2.0
+import * from dw::core::URL
+output application/java
+---
+(parseURI(decodeURI(payload.'odata.nextLink'))).path]]></ee:set-variable>
+					</ee:variables>
+				</ee:transform>
+				<flow-ref
+					doc:name="Calling filter-emails-which-has-attachments-recurring-sub-flow"
+					doc:id="7ec8e250-7e7f-4e22-bba6-11b94bee97e4"
+					name="filter-emails-which-has-attachments-recurring-sub-flow" />
+			</otherwise>
+		</choice>
+	</sub-flow>
+</mule>
