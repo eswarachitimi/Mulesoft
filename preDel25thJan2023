@@ -1,0 +1,102 @@
+%dw 2.0
+
+fun formatDate(date: String) =
+  (date as String {format: "yyyy-MM-dd'T'HH:mm:ss"})
+
+fun replaceNewLineWithSpace(value: String) =
+  value replace "\n" with (" ")
+
+fun replaceCarriageReturnWithEmpty(value: String) =
+  value replace "\r" with ("")
+
+fun replaceCRNLWithEmpty(value: String) =
+  value replace "\r\n" with ("")
+
+fun replaceHorizontalTabWithEmpty(value: String) =
+  value replace "\t" with ("")
+
+fun replaceSpacesWithEmpty(value: String) =
+  value replace "  " with ("")
+
+fun replaceSpaceWithEmpty(value: String) =
+  value replace " " with ("")
+
+fun replaceNewLineWithEmpty(value: String) =
+  value replace "\n" with ("")
+
+fun removeSpaceNotes(notes: String) =
+  trim(replaceSpacesWithEmpty(replaceHorizontalTabWithEmpty(replaceCarriageReturnWithEmpty(replaceNewLineWithSpace(replaceCRNLWithEmpty(notes))))))
+
+fun removeSpaceFlightNo(flightNumber: String) =
+  trim(replaceSpaceWithEmpty(replaceHorizontalTabWithEmpty(replaceCarriageReturnWithEmpty(replaceNewLineWithEmpty(replaceCRNLWithEmpty(flightNumber))))))
+
+fun RemoveSpaceHAWBNumber(HAWBNum: String) =
+  trim(replaceSpaceWithEmpty(replaceCRNLWithEmpty(HAWBNum)))
+
+fun isNullOrEmptyAndGetRequiredValue(value: String, index: Number) =
+  (if ((not isBlank(value)) and ((value indexOf "/") > 0))
+    (trim((value splitBy ("/"))[index]))
+  else
+    (value))
+
+fun matchRegularExpresion(value: String, pattern: String) =
+  if (value matches pattern)
+    (value)
+  else
+    ("")
+output application/json  
+---
+{
+  "DoNumber": payload.ACSPreDeliveryOrderRequest.DoNumber,
+  "IssueDate": payload.ACSPreDeliveryOrderRequest.IssueDate,
+  "AirLine": payload.ACSPreDeliveryOrderRequest.AirLine,
+  "Notes": removeSpaceNotes(payload.ACSPreDeliveryOrderRequest.Notes),
+  "NotifyDetails": payload.ACSPreDeliveryOrderRequest.NotifyDetails,
+  "AgentDetails": {
+    "AgentName": payload.ACSPreDeliveryOrderRequest.AgentDetails.AgentName,
+    "AgentCode": payload.ACSPreDeliveryOrderRequest.AgentDetails.AgentCode,
+    "PoBox": payload.ACSPreDeliveryOrderRequest.AgentDetails.PoBox,
+    "Address": payload.ACSPreDeliveryOrderRequest.AgentDetails.Address
+  },
+  "ConsigneeDetails": {
+    "ConsigneeName": payload.ACSPreDeliveryOrderRequest.ConsigneeDetails.ConsigneeName,
+    "Address": payload.ACSPreDeliveryOrderRequest.ConsigneeDetails.Address
+  },
+  "FlightDetails": {
+    "FlightNo": removeSpaceFlightNo(payload.ACSPreDeliveryOrderRequest.FlightDetails.FlightNo),
+    "FlightDate": formatDate(payload.ACSPreDeliveryOrderRequest.FlightDetails.FlightDate),
+    "FlightArrivalDate": formatDate(payload.ACSPreDeliveryOrderRequest.FlightDetails.FlightArrivalDate)
+  },
+  "AwbDetails": {
+    "AWBNumber": replaceSpaceWithEmpty(payload.ACSPreDeliveryOrderRequest.AwbDetails.AWBNumber),
+    "ExpectedQuantity": isNullOrEmptyAndGetRequiredValue(payload.ACSPreDeliveryOrderRequest.AwbDetails.ExpectedQuantity, 1) as Number,
+    "ExpectedWeight": (isNullOrEmptyAndGetRequiredValue(payload.ACSPreDeliveryOrderRequest.AwbDetails.ExpectedWeight, 1) replace /[^0-9.]/ with ("")) as Number,
+    "NatureofGoods": payload.ACSPreDeliveryOrderRequest.AwbDetails.NatureofGoods,
+    "HandlingCodes": matchRegularExpresion(payload.ACSPreDeliveryOrderRequest.AwbDetails.HandlingCodes, "^[^a-z]*\$"),
+    "rcfQuantity": payload.ACSPreDeliveryOrderRequest.AwbDetails.rcfQuantity as Number,
+    "TotalQuantity":  isNullOrEmptyAndGetRequiredValue(payload.ACSPreDeliveryOrderRequest.AwbDetails.TotalQuantity, 0) as Number,
+    "rcfWeight": payload.ACSPreDeliveryOrderRequest.AwbDetails.rcfWeight as Number,
+    "TotalGrossWeight": (isNullOrEmptyAndGetRequiredValue(payload.ACSPreDeliveryOrderRequest.AwbDetails.TotalGrossWeight, 1) replace /[^0-9.]/ with ("")) as Number,
+    "ExpectedQuantityUnit": payload.ACSPreDeliveryOrderRequest.AwbDetails.ExpectedQuantityUnit,
+    "TotalQuantityUnit": payload.ACSPreDeliveryOrderRequest.AwbDetails.TotalQuantityUnit,
+    "TotalGrossWeightUnit": payload.ACSPreDeliveryOrderRequest.AwbDetails.TotalGrossWeightUnit,
+     "chargeableWeight": payload.ACSPreDeliveryOrderRequest.AwbDetails.chargeableWeight,
+  },
+  "HAwbDetails": {
+    "AWBNumber": RemoveSpaceHAWBNumber(payload.ACSPreDeliveryOrderRequest.HAwbDetails.AWBNumber),
+    "rcfQuantity": payload.ACSPreDeliveryOrderRequest.HAwbDetails.rcfQuantity as Number,
+     "TotalQuantity": isNullOrEmptyAndGetRequiredValue(payload.ACSPreDeliveryOrderRequest.HAwbDetails.TotalQuantity, 0) as Number,
+    "rcfWeight": payload.ACSPreDeliveryOrderRequest.HAwbDetails.rcfWeight as Number,
+    "TotalGrossWeight": (isNullOrEmptyAndGetRequiredValue(payload.ACSPreDeliveryOrderRequest.HAwbDetails.TotalGrossWeight, 1) replace /[^0-9.]/ with ("")) as Number,
+    "ExpectedQuantity":  isNullOrEmptyAndGetRequiredValue(payload.ACSPreDeliveryOrderRequest.HAwbDetails.ExpectedQuantity, 1) as Number,
+    "ExpectedWeight": (isNullOrEmptyAndGetRequiredValue(payload.ACSPreDeliveryOrderRequest.HAwbDetails.ExpectedWeight, 1) replace /[^0-9.]/ with ("")) as Number,
+    "chargeableWeightUnit": payload.ACSPreDeliveryOrderRequest.HAwbDetails.chargeableWeightUnit,
+    "ExpectedQuantityUnit": payload.ACSPreDeliveryOrderRequest.HAwbDetails.ExpectedQuantityUnit,
+    "TotalQuantityUnit": payload.ACSPreDeliveryOrderRequest.HAwbDetails.TotalQuantityUnit,
+    "TotalGrossWeightUnit": payload.ACSPreDeliveryOrderRequest.HAwbDetails.TotalGrossWeightUnit,
+    "NatureofGoods": payload.ACSPreDeliveryOrderRequest.HAwbDetails.NatureofGoods,
+    "HandlingCodes": matchRegularExpresion(payload.ACSPreDeliveryOrderRequest.HAwbDetails.HandlingCodes, "^[^a-z]*\$"),
+    "chargeableWeight": payload.ACSPreDeliveryOrderRequest.HAwbDetails.chargeableWeight 
+  },
+  "documentType": payload.ACSPreDeliveryOrderRequest.documentType
+}
