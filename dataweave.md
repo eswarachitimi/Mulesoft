@@ -1,5 +1,5 @@
 
-Just an FYI … This is collated from various internet articles … Please feel free to add/update to this table  …
+Just an FYI â€¦ This is collated from various internet articles â€¦ Please feel free to add/update to this table  â€¦
 
 
 Function	Works on	$	$$	$$$	Works on Null
@@ -19,7 +19,7 @@ replace	 	All matches of the given expression
 
 
 Example,
-•	payload filter (value, index) -> value.id > 123  
+â€¢	payload filter (value, index) -> value.id > 123  
 can be expressed as below using lambda
-•	payload filter $.id > 123
+â€¢	payload filter $.id > 123
 
