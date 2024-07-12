@@ -61,3 +61,15 @@ fun getExtension(filename:String) = (FilenameUtils::getExtension(filename))
 Note: Apache Commons Dependency needs to be added.
 ```
 - Munit assertion for json,csv,xml		👉🏼 Ex: #[MunitTools::equalTo(readUrl('classpath://somepath/abc.json', 'application/json'))]
+- GMT Time Zone
+```
+%dw 2.0
+output application/json
+fun format(d: DateTime) = d as String {format: "yyyy-MM-dd'T'HH:mm:ss'Z'"}
+---
+{
+    "CreatedDateTime" : format((now()) >> "GMT"),
+    "CreatedDateTimeLessthan4Hours" : format((now() - |PT4H|) >> "GMT"),
+    "currentDate" : now()
+}
+```
