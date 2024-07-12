@@ -1,5 +1,8 @@
 6 Architectural Patterns You Should Study Before Your Next Interview
 
+![image](https://github.com/user-attachments/assets/75d1f07d-6c69-40f3-9d93-765fffe1a756)
+
+
 # 1. Event-Driven Architecture
 
 **Definition:** Components communicate through events.
