@@ -73,3 +73,9 @@ fun format(d: DateTime) = d as String {format: "yyyy-MM-dd'T'HH:mm:ss'Z'"}
     "currentDate" : now()
 }
 ```
+
+📝 Sources
+```
+https://developer.mulesoft.com/tutorials-and-howtos/dataweave/learn-dataweave-with-the-dataweave-playground-getting-started/
+https://medium.com/@myid535/dataweave-100-solved-practice-interview-problems-275fa654a143
+```
