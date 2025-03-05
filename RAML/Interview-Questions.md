@@ -44,151 +44,43 @@ The root level of the.raml file defines security. So, let us define our HTTP bas
 
 We will define the data types used .raml file:
 
-types:
-  Foo:
-    type: object
-    properties:
-      id:
-        required: true
-        type: integer
-      name:
-        required: true
-        type: string
-      ownerName:
-        required: false
-        type: string
-Q: What is the difference between Raml and swagger?
-Ans:
+![image](https://github.com/user-attachments/assets/fdc9bb13-eda5-4fa2-9d88-a27d5d3b123a)
 
-RAML
-Swagger
-The goal of creating RAML is to provide crucial information to RESTful APIs in order to make API design easier.
+#### What is Traits in raml?
 
-Swagger's purpose is to maintain documentation, client libraries, and source code all in sync.
-
-RAML was founded in the year 2013.
-
-Swagger, previously known as OpenAPI, is a specification that was created in 2010.
-
-Current version of RAML is RAML1.0(2017-07-06)
-
-The current version of Swagger is 3.0.1(2017-12-17)
-
-RAML is supported by Mulesoft, Intuit, AngulasJs, PayPal, Programmable Web and API service, Cisco, VMWare, etc
-
-Swagger is supported by Google, IBM, Atlassian and Microsoft.
-
-Tools and Editors for RAML, API Workbench IDE based on Atom.
-
-Tools and Editors for Swagger are CodeGen, UI and Editor.
-
-RAML is preferred by developers due to its API specification, design patterns, and code reusability, as well as the fact that it is human readable.
-
-Swagger was chosen because it is open-source, free to use, flexible, and capable of executing API calls directly from documentation.
-
-Mulesoft is the primary sponsor of RAML.
-
-SmartBear is the primary sponsor of Swagger.
-
-RAML allows the user to view how the API looks while designing simple text that is easy to read.
-
-Swagger is a developer-only documentation tool, which means that the project can only be documented by the user who writes the API.
-
-The primary motivation for creating RAML is that it appeals to programmers.
-
-Swagger is based on JSON and has format and data serialization limitations.
-
-RAML supports JSON schema and W3C XML.
-
-Swagger does not support XML, and version 1.2 uses only a subset of JSON.
-
-Q: What is Traits in raml?
-Ans:
 Traits are similar to functions in that they allow you to declare common properties for HTTP methods.
 
+#### How to Declare Traits in raml?
 
-
-Q: How to Declare Traits in raml?
-Ans:
 We can either define the traits in the root section or build a fragment and import it into the API Spec.
 
-traits:
-  client-id-required:
-    headers:
-      client_id:
-        type: string
-      client_secret:
-        type: string
-Q: How to call Traits from Resources in RAML?
-Ans:
+
+![image](https://github.com/user-attachments/assets/f6365d38-5aab-4774-a5d3-bbdc43e036e5)
+
+#### How to call Traits from Resources in RAML?
+
 The traits can be referred to by the term "is". For example, is: [trait_name]
 
-traits:
-  client-id-required:
-    headers:
-      client_id:
-        type: string
-      client_secret:
-        type: string
-
-resourceTypes:
-      collection:
-          get:
-            is: [client-id-required]
-            responses:
-              200:
-                body:
-                 application/json:
-                    example: |
-                      <<exampleReference1>
-/fixed_pay:
-   type:
-     collection:
-         exampleReference1: !include /examples/fixedPay.json
+![image](https://github.com/user-attachments/assets/91e35047-5a43-47e3-b17f-ca9828454401)
 
 
-Q: How do I define an API resource and it's parameters in a .raml file?
-Ans:
-First define the top-level resource (URI) of API :
+#### How do I define an API resource and it's parameters in a .raml file?
 
-/foos:
-Then, we can expand other resource and parameters given below:
-/foos:
-  /{id}:
-  /name/{name}:
-URI parameter defines inside {}.
-Q: How to declare method definition in .raml file?
-Ans:
+![image](https://github.com/user-attachments/assets/77baa110-48a8-4755-91d4-bb171536908d)
+
+
+#### How to declare method definition in .raml file?
+
 We can provide the HTTP methods that should be used for each resource.
 
-/foos:
-  get:
-  post:
-  /{id}:
-    get:
-    put:
-    delete:
-  /name/{name}:
-Q: How to declare Query Parameters, with its response and status structure?
-Ans:
+![image](https://github.com/user-attachments/assets/086c5419-eefd-4434-9063-639c8a40e392)
 
-/foos:
-  get:
-    description: List all Foos matching query criteria, if provided;
-                 otherwise list all Foos
-    queryParameters:
-      name?: string
-      ownerName?: string
-    responses:
-      200:
-        body:
-          application/json:
-            type: Foo[]
-            example: |
-              [
-                { "id" : 1, "name" : "XYZ" },
-                { "id" : 2, "name" : "ABC" }
-              ]
-Q: Is it possible to use the same HTTP methods multiple times for a single request path?
-Ans:
+
+#### How to declare Query Parameters, with its response and status structure?
+
+![image](https://github.com/user-attachments/assets/2f036837-0134-4d9d-9d28-37c247bf2019)
+
+
+#### Is it possible to use the same HTTP methods multiple times for a single request path?
+
 No, In RAML, we could only use one HTTP method for a single request path. For example, if the request url is "/users/user," the GET, PUT, POST, PATCH, or DELETE HTTP methods can only be defined once.
