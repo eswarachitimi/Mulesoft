@@ -10,14 +10,12 @@
 
 ![image](https://github.com/user-attachments/assets/7431129b-a974-4ed0-868a-a839ff15484a)
 
-%dw 2.0
-
-fun grouping (inputObj,dynmicString) = ((payload groupBy($.Fruit))[dynmicString])
-output application/json
----
-payload distinctBy ((item, index) -> item.Fruit) map {
-    Fruit : $.Fruit,
-    quantity : (grouping (payload,($.Fruit)))..quantity reduce ( $ + $$)
-}
+![image](https://github.com/user-attachments/assets/f35e7e72-acbe-4a79-a614-e64952502a6f)
 
 ## Example -4
+
+![image](https://github.com/user-attachments/assets/c665af18-e3ac-4f37-8417-1eb1db66144c)
+
+## Example -5
+
+![image](https://github.com/user-attachments/assets/c67375ef-64f3-41f2-a135-f7c39cb28fda)
