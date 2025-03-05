@@ -2,16 +2,15 @@
 
 The RESTful API Modeling Language is a YAML-based language that is used to describe RESTful APIs. It contains all of the information required to describe or practically describe RESTful APIs. Although RAML was designed with RESTful APIs in mind, it is suitable to describe APIs that do not adhere to all REST constraints.
 
-
 #### What are the different HTTP methods that RAML supports?
 
 The HTTP methods that RAML supports are as below:
 
-**GET:** used to describe retrieval of data.
-**PUT:** used to describe updating the data.
-**PATCH:** used to describe to partial Update/Modify
-**POST:** used to describe to add new record
-**DELETE:** used to describe to delete record
+>> **GET:** used to describe retrieval of data.
+>> **PUT:** used to describe updating the data.
+>> **PATCH:** used to describe to partial Update/Modify
+>> **POST:** used to describe to add new record
+>> **DELETE:** used to describe to delete record
 
 #### What is Resource Types?
 
