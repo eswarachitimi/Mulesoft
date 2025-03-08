@@ -1,4 +1,4 @@
-* DataWeave is a programming language designed for transforming data. It is MuleSoft’s primary language for data transformation, as well as the expression language used to configure components and connectors within Mule.
+DataWeave is a programming language designed for transforming data. It is MuleSoft’s primary language for data transformation, as well as the expression language used to configure components and connectors within Mule.
 
 ![image](https://github.com/user-attachments/assets/9ff87642-4e95-452c-a0b0-0101bb2b10fd)
 
