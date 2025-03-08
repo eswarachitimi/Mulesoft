@@ -30,5 +30,5 @@ Finally, the last line of the script is the output section. Whatever the output 
 
 ![image](https://github.com/user-attachments/assets/b7fdd884-79b3-4ea1-b448-e53aee582681)
 
-![image](https://github.com/user-attachments/assets/c08d50ef-944a-4fea-a4e6-b4d7c9bd4fa7)
+![image](https://github.com/user-attachments/assets/e87ec497-9255-4bfa-b8f4-0f3e9d2bf0a1)
 
