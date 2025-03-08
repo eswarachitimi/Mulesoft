@@ -6,6 +6,9 @@
 
 ### Anypoint Platform Related -
 
+- https://mulesy.com/anypoint-exchange/
+- https://mulesy.com/anypoint-platform-interview-questions-basic/
+- https://mulesy.com/mule-runtime-interview-questions-basic/
 
 ### RAML Related -
 
@@ -17,7 +20,6 @@
 - https://www.youtube.com/playlist?list=PLu8R-CyJmLVm-vBCaHk7z7AHnjUN6Hf79
 - https://medium.com/@myid535/dataweave-100-solved-practice-interview-problems-275fa654a143
 - https://docs.mulesoft.com/dataweave/latest/dataweave-selectors
-- https://www.prostdev.com/post/dataweave-2-0-core-functions-cheatsheet
 - https://docs.mulesoft.com/dataweave/latest/dw-functions
 - https://docs.mulesoft.com/dataweave/latest/dw-operators
 - https://docs.mulesoft.com/dataweave/latest/dataweave-system-properties
