@@ -3,6 +3,8 @@
 ### Mule Soft Development Related -
 
 - https://mulesy.com/1-mulesoft-as-middleware-solution/
+- https://jsonplaceholder.typicode.com/users
+- 
 
 ### Anypoint Platform Related -
 
