@@ -32,3 +32,12 @@ Finally, the last line of the script is the output section. Whatever the output 
 
 ![image](https://github.com/user-attachments/assets/e87ec497-9255-4bfa-b8f4-0f3e9d2bf0a1)
 
+![image](https://github.com/user-attachments/assets/78992f14-4a91-447e-88ab-4787982cb05a)
+
+Valid identifiers cannot match any of the reserved DataWeave keywords:
+
+> and, as, async, case, default, do, else, enum, false, for, fun, if, import, input, is, ns, null, or, output, private, throw, true, type, unless, using, var, yield
+
+![image](https://github.com/user-attachments/assets/c99815fd-7350-4b0b-8290-433d5bd50e53)
+
+
