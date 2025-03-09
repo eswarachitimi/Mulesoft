@@ -1,6 +1,7 @@
-DataWeave selectors traverse the structures of objects and arrays and return matching values. 
+# Selectors
 
-DataWeave selectors allow navigating any combination of Objects and Arrays to get to the data you need. 
+- DataWeave selectors traverse the structures of objects and arrays and return matching values.
+- DataWeave selectors allow navigating any combination of Objects and Arrays to get to the data you need. 
 
 ![image](https://github.com/user-attachments/assets/a99ff0c6-b866-4cc0-bf5a-d1f727a6e7fc)
 
