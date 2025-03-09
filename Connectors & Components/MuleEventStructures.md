@@ -49,3 +49,40 @@ A Mule event is composed of these objects:
 - attributes.statusCode to select an HTTP status code like 200.
 - attributes.headers.date to select Sun, 20 Jan 2019 18:54:54 GMT from the header of an HTTP response.
 - attributes.headers.'content-type' to select the HTTP content type application/json
+
+# Correlation ID
+
+When Mule creates a new event, it generates a unique identifier string called a correlation ID before sending the event to the next processor in the flow. This ID enables you to correlate different log entries with a particular execution.
+
+To change how Mule generates the correlation ID:
+
+- Add the <configuration> component to your application XML.
+- Set the correlationIdGeneratorExpression attribute to specify the expression that generates the correlation ID:
+
+```
+<configuration correlationIdGeneratorExpression="#[<custom_generator_expression>]"/>
+
+<logger level="INFO" message="#[correlationId]"/>
+```
+
+# Variables in Mule Apps
+
+Variables are used to store per-event values for use within a flow of a Mule app. The stored data can be any supported data type, such as an object, number, or string. It is also possible to store -
+
+- the current message (using the message keyword)
+- the current message payload (using the payload keyword) or
+- just the current message attributes (using the attributes keyword).
+- However, the keyword *vars* (for example, vars.someOtherVar) is not allowed.
+
+You can create, or update, variables in these ways:
+
+- Using the Set Variable component.
+- Using a Target Variable from within an operation, such as the Read operation to the File connector or the Store operation to the Database connector.
+- Using the DataWeave Transform Component (EE-Only)
+- Using Scripting Component (in scripting module)
+
+You can also delete/remove:
+
+- Using the Remove Variable component.
+
+If the name of your variable is myVar, you can access it like this: vars.myVar
