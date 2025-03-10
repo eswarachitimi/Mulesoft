@@ -100,7 +100,9 @@ A character class matches any one of a set of characters. It is used to match th
 [set_of_characters]: Matches any single character in set_of_characters. By default, the match is case-sensitive.
 ```
 
-> Example : [abc] will match characters a,b and c in any string.
+![image](https://github.com/user-attachments/assets/3be44c52-0528-4a16-b1ed-41b7860cd66f)
+
+![image](https://github.com/user-attachments/assets/501d6cb0-504b-42ad-a7a1-e3321244853d)
 
 ##### 10. [^set_of_characters] Negation: 
 
@@ -149,4 +151,6 @@ Inline comment: The comment ends at the first closing parenthesis.
 X-mode comment. The comment starts at an unescaped # and continues to the end of the line.
 
 > Example :  (?x)\bA\w+\b#Matches words starting with A
+
+![image](https://github.com/user-attachments/assets/135bdc47-2b20-49cd-9962-fa86806da806)
 
