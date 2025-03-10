@@ -1,5 +1,9 @@
 A regular expression (regex) is a pattern of characters that matches a substring or the entire input text. Regular expressions are used to search, validate, and manipulate text.
 
+![image](https://github.com/user-attachments/assets/38080937-0d9e-4ca3-aade-304db06bc744)
+
+![image](https://github.com/user-attachments/assets/41c52470-8d50-4e9c-b136-7735db26f8b0)
+
 ##### How regular expressions work
 
 - A regular expression engine attempts to match a pattern in the input text.
