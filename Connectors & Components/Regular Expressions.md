@@ -102,40 +102,51 @@ A character class matches any one of a set of characters. It is used to match th
 
 > Example : [abc] will match characters a,b and c in any string.
 
-10. [^set_of_characters] Negation: 
+##### 10. [^set_of_characters] Negation: 
+
 Matches any single character that is not in set_of_characters. By default, the match is case-sensitive.
 
-Example : [^abc] will match any character except a,b,c .
-11. [first-last] Character range: 
+> Example : [^abc] will match any character except a,b,c .
+
+##### 11. [first-last] Character range: 
+
 Matches any single character in the range from first to last.
 
-Example : [a-zA-z] will match any character from a to z or A to Z.
-12. The Escape Symbol (  \  ) 
+> Example : [a-zA-z] will match any character from a to z or A to Z.
+
+##### 12. The Escape Symbol (  \  ) 
+
 If you want to match for the actual ‘+’, ‘.’ etc characters, add a backslash( \ ) before that character. This will tell the computer to treat the following character as a search character and consider it for a matching pattern.
 
-Example : \d+[\+-x\*]\d+ will match patterns like "2+2"
-and "3*9" in "(2+2) * 3*9".
-13. Grouping Characters ( ) 
+> Example : \d+[\+-x\*]\d+ will match patterns like "2+2" and "3*9" in "(2+2) * 3*9".
+
+##### 13. Grouping Characters ( ) 
+
 A set of different symbols of a regular expression can be grouped together to act as a single unit and behave as a block, for this, you need to wrap the regular expression in the parenthesis( ).
 
-Example : ([A-Z]\w+) contains two different elements of the regular 
-expression combined together. This expression will match any pattern 
-containing uppercase letter followed by any character.
-14. Vertical Bar (  |  ) 
+> Example : ([A-Z]\w+) contains two different elements of the regular expression combined together. This expression will match any pattern containing uppercase letter followed by any character.
+
+##### 14. Vertical Bar (  |  ) 
+
 Matches any one element separated by the vertical bar (|) character.
 
-Example :  th(e|is|at) will match words - the, this and that.
-15. \number 
+> Example :  th(e|is|at) will match words - the, this and that.
+
+##### 15. \number 
+
 Backreference: allows a previously matched sub-expression(expression captured or enclosed within circular brackets ) to be identified subsequently in the same regular expression. \n means that group enclosed within the n-th bracket will be repeated at current position.
 
-Example : ([a-z])\1 will match “ee” in Geek because the character 
-at second position is same as character at position 1 of the match.
-16. Comment ( ?# comment ) 
+> Example : ([a-z])\1 will match “ee” in Geek because the character at second position is same as character at position 1 of the match.
+
+##### 16. Comment ( ?# comment ) 
+
 Inline comment: The comment ends at the first closing parenthesis.
 
-Example : \bA(?#This is an inline comment)\w+\b
-17. # [to end of line] 
+> Example : \bA(?#This is an inline comment)\w+\b
+
+##### 17. # [to end of line] 
+
 X-mode comment. The comment starts at an unescaped # and continues to the end of the line.
 
-Example :  (?x)\bA\w+\b#Matches words starting with A
+> Example :  (?x)\bA\w+\b#Matches words starting with A
 
