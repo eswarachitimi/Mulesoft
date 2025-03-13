@@ -1,13 +1,13 @@
 MuleSoft has the ability to configure properties that can be used throughout your integration flows. Properties are key-value pairs that can be used to store configuration data such as database connection details, API keys, and more.
 
-##### Points to remember before creating Configuration Files -
+#### Points to remember before creating Configuration Files -
 
-- It is advisable to create any configuration file under `_src/main/resources/_`. I prefer keeping all the configuration files under separate folders and I use the following path `_src/main/resources/config/_`.
+- It is advisable to create any configuration file under `src/main/resources/`. I prefer keeping all the configuration files under separate folders and I use the following path `src/main/resources/config/`.
 - It is advised that we should separate all the plain text properties and encrypted properties into different files for different environments.
-- `_dev.yaml_` will contain all dev-related properties which are in plain text format.
-- `_dev-secure.yaml_` will contain all dev-related encrypted properties.
-- The above points are similar for different environments and `_.properties_` files as well.
-- Any common properties among all environments need to go into a separate common configuration file. I prefer them in `_common.yaml_` or `_common.properties_` (Name can be anything that makes sense).
+- `dev.yaml` will contain all dev-related properties which are in plain text format.
+- `dev-secure.yaml` will contain all dev-related encrypted properties.
+- The above points are similar for different environments and `.properties` files as well.
+- Any common properties among all environments need to go into a separate common configuration file. I prefer them in `common.yaml` or `common.properties` (Name can be anything that makes sense).
 
 ![image](https://github.com/user-attachments/assets/af65d441-a26a-4e4d-8b7c-812492b7a768)
 
@@ -16,6 +16,80 @@ MuleSoft has the ability to configure properties that can be used throughout you
 ![image](https://github.com/user-attachments/assets/eb17b66f-5a56-438d-82a2-b13e583b86a4)
 
 - This order allows mule runtime to properly override any property which is declared in both common & environment-specific files and consider the value only from env specific configuration file.
+
+#### Setup Properties in YAML File -
+
+YAML is a popular human-readable data serialization format that can be used to configure properties in MuleSoft. To create a YAML file for your properties, follow these steps:
+
+- Create a new file with an `.yaml` extension in your MuleSoft project.
+- Define your properties in the YAML format, using the `key: value` notation. For example
+
+ ``` 
+database:
+  host: "localhost"
+  port: "3306"
+  username: "admin"
+```
+
+- Save the YAML file.
+
+> **_⚠ Note :_** Make sure you provide a space after : before writing a value.
+
+#### Setup Properties in the Properties File -
+
+Another way to configure properties in MuleSoft is by using a `.properties` file. To create a properties file for your properties, follow these steps:
+
+- Create a new file with an `.properties` extension in your MuleSoft.
+- Define your properties using the key=value notation. For example:
+
+```
+database.host=localhost
+database.port=3306
+database.username=admin
+```
+
+- Save the properties file.
+
+#### Adding .yaml or .properties files to Global Elements -
+
+- Navigate to Global Elements Tab in Mule XML file. It is advisable to create a separate XML file just for configuring Global elements.
+- Click on Create and choose Configuration Properties and choose the file you want to refer to.
+
+![image](https://github.com/user-attachments/assets/a681d7cc-21a0-4344-848c-6f8cc68d81f2)
+
+  Steps to follow to create Configuration Properties Type
+
+![image](https://github.com/user-attachments/assets/22b477cb-be70-4646-b878-7fb489db4b8c)
+
+![image](https://github.com/user-attachments/assets/4dcbad1d-2f47-4793-b3a0-c433e998ce02)
+
+  - But, we need to dynamically assign the configuration file. So, we need to add the mule.env placeholder instead of dev in the path and the File location looks like this
+
+- Dynamic location for Plain Properties
+
+![image](https://github.com/user-attachments/assets/5c77f24d-ca1f-4415-b55b-0506042df7c2)
+
+- Dynamic location for Secure Properties
+
+![image](https://github.com/user-attachments/assets/9a8f7ce4-c239-4df1-8c6c-07f04ef9424b)
+
+> The similar kind of configuration will be done even for `.properties` files.
+
+#### Accessing Properties in Mule flows -
+
+Once all required global elements are declared we can use any of the following ways to access properties in a properties file:
+
+- Properties can be used by referencing the key of the property enclosed in ${}. This will work only if Expression Mode is turned OFF. Here is an example of how to access the host property from the database section of our properties file:
+
+> ${database.host}
+
+- Using Dataweave and the p() function from Mule module. This should be used when Expression mode is turned ON. Here is an example of how to access the host property from the database section of our properties file:
+  
+> #[p('database.host')]
+
+> #[Mule::p('database.host')]
+
+- Both of the above will return the value localhost. The only difference is the Mule module is by default imported into Dataweave and we need not to explicitly mention it in the function call p() unless you want to create another function with the name p(). But, It’s always a best practice to use the function with Module Name as runtime will understand where to get this function from.
 
 ### Differences in Extracting property values using $​{ } and p('​ '​) | Mule 4 
 
@@ -64,3 +138,51 @@ When you give proper key names then both behaves in same way. p(' ') is nothing 
 
 This p(' ') is also a function which accepts a string as an argument .It returns null when no value is found.
 
+#### Accessing Secure Properties -
+
+In some cases, you may need to store sensitive data 🤐 such as passwords, API keys, or other secrets. To keep this data secure, you can use the MuleSoft Secure Property Placeholder (SPP). The SPP allows you to encrypt your properties and access them securely in your integration flows.
+
+Consider the following `mule.key` as a Secret key for Dev, which we use to encrypt the values. The following values will be passed as Runtime Arguments when deploying the Mule Application.
+
+```
+mule.env=dev
+mule.key=MySuperSecretKey
+```
+
+> Note that you should replace `MySuperSecretKey` it with your secret key in your application.
+
+> `mule.key & mule.env` are used for general represetation of secret key and environment name. You can use any variable name you wish and pass them as runtime arguments.
+
+- Encrypt your properties by following the instructions given on the below page.
+
+> If you use the $ character in your key, you must precede it with \. For example, to use key myKey#$%123, you must specify the <key> parameter as myKey#\$%123.
+
+![image](https://github.com/user-attachments/assets/0af3503f-62c1-480b-9508-87a4cbd68647)
+
+1. By using the Blowfish method and CBC state we will get `5BhrtU8SGibB5mE5P0m27w==` for `db.password=password`.
+2. Save the encrypted property value in your file. For example:
+
+#### YAML File:
+
+```
+database:
+  password: "![5BhrtU8SGibB5mE5P0m27w==]"
+```
+
+#### Properties File:
+
+```
+database.password=![5BhrtU8SGibB5mE5P0m27w==]
+```
+
+- Access your encrypted property in your integration flows using the `secure::` prefix. For example:
+
+```
+${secure::database.password}
+or
+#[p('secure::database.password')]
+or
+#[Mule::p('secure::database.password')]
+```
+
+This will decrypt the database.password as password.
