@@ -2,6 +2,15 @@
 ## Dataweave Expressions
 
 - Flow name in an API	👉🏼 #[flow.name]
+- API Name  👉🏼 #[api.name]
+- Working directory path 👉🏼 Example- ${mule.home}/apps/${app.name}/.
+- 👉🏼
+- 👉🏼
+- 👉🏼
+- 👉🏼
+- 👉🏼
+- 👉🏼
+- 👉🏼
 - Correlation ID 		👉🏼 #[correlationId]
 - Loading a file 		👉🏼 ${file::properties-file.txt}
 - Extracting the underlying java exception class		👉🏼 #[if (error.exception.cause.^class == null) error.cause.^class else error.exception.cause.^class]
