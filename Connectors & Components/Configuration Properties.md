@@ -1,3 +1,22 @@
+MuleSoft has the ability to configure properties that can be used throughout your integration flows. Properties are key-value pairs that can be used to store configuration data such as database connection details, API keys, and more.
+
+##### Points to remember before creating Configuration Files -
+
+- It is advisable to create any configuration file under `_src/main/resources/_`. I prefer keeping all the configuration files under separate folders and I use the following path `_src/main/resources/config/_`.
+- It is advised that we should separate all the plain text properties and encrypted properties into different files for different environments.
+- `_dev.yaml_` will contain all dev-related properties which are in plain text format.
+- `_dev-secure.yaml_` will contain all dev-related encrypted properties.
+- The above points are similar for different environments and `_.properties_` files as well.
+- Any common properties among all environments need to go into a separate common configuration file. I prefer them in `_common.yaml_` or `_common.properties_` (Name can be anything that makes sense).
+
+![image](https://github.com/user-attachments/assets/af65d441-a26a-4e4d-8b7c-812492b7a768)
+
+- While configuring the Configuration Properties in global elements, make sure the reference to the common configuration file is at last in order of elements.
+
+![image](https://github.com/user-attachments/assets/eb17b66f-5a56-438d-82a2-b13e583b86a4)
+
+- This order allows mule runtime to properly override any property which is declared in both common & environment-specific files and consider the value only from env specific configuration file.
+
 ### Differences in Extracting property values using $​{ } and p('​ '​) | Mule 4 
 
 We all know that we can extract property values from property file or vault by two ways . either by ${} or p(' ') .
