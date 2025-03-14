@@ -313,12 +313,9 @@ types:
           description: Book not found.
 ````
 
-Metadata: The RAML starts with metadata that defines the version of RAML, the title, version, and base URI of the API.
-Types: This section defines the data structures used in the API. In this case, we’ve defined a Book type.
-Resources: The /books and /books/{bookId} are resources. Each resource can have multiple HTTP methods (get, post, delete, etc.).
-Query Parameters: The get method under /books accepts query parameters to filter books by author and publishedBefore.
-Responses: Each HTTP method has potential responses. For example, the get method can return a 200 OK response with a list of books, and the post method can return a 201 Created response with the created book’s details.
-URI Parameters: The /books/{bookId} resource uses a URI parameter {bookId} to represent a specific book ID.
-### _Links -_
-
-https://medium.com/@aleksej.gudkov/mulesoft-raml-example-a-step-by-step-guide-to-api-design-21361291a100
+- **Metadata:** The RAML starts with metadata that defines the version of RAML, the title, version, and base URI of the API.
+- **Types:** This section defines the data structures used in the API. In this case, we’ve defined a Book type.
+- **Resources:** The `/books` and `/books/{bookId}` are resources. Each resource can have multiple HTTP methods (get, post, delete, etc.).
+- **Query Parameters:** The get method under `/books` accepts query parameters to filter books by author and publishedBefore.
+- **Responses:** Each HTTP method has potential responses. For example, the get method can return a 200 OK response with a list of books, and the post method can return a 201 Created response with the created book’s details.
+- **URI Parameters:** The `/books/{bookId}` resource uses a URI parameter `{bookId}` to represent a specific book ID.
