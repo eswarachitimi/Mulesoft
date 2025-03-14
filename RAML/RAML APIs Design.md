@@ -125,6 +125,7 @@ securitySchemes:
 
 ### _RAML file for Customer API -_
 
+### `customer-api.raml`
 ```
 #%RAML 1.0
 title: Customer API
@@ -187,5 +188,137 @@ types:
       500:
         description: Internal server error
 ```
+
+### `books-api.raml`
+
+```
+#%RAML 1.0
+title: Book Store API
+version: v1
+baseUri: http://api.bookstore.com/v1
+
+types:
+  Book:
+    type: object
+    properties:
+      id: string
+      title: string
+      author: string
+      publishedDate: date-only
+      isbn: string
+      summary: string
+    example: |
+      {
+        "id": "1",
+        "title": "Moby Dick",
+        "author": "Herman Melville",
+        "publishedDate": "1851-10-18",
+        "isbn": "978-1234567890",
+        "summary": "Story of a ship captain's quest for revenge."
+      }
+    schema: |
+      {
+        "$schema": "http://json-schema.org/draft-07/schema#",
+        "type": "object",
+        "properties": {
+          "id": {"type": "string"},
+          "title": {"type": "string"},
+          "author": {"type": "string"},
+          "publishedDate": {"type": "string", "format": "date"},
+          "isbn": {"type": "string"},
+          "summary": {"type": "string"}
+        },
+        "required": ["id", "title", "author", "publishedDate", "isbn", "summary"]
+      }
+
+/books:
+  get:
+    description: Retrieve a list of books.
+    queryParameters:
+      author:
+        description: Filter books by author name.
+        type: string
+      publishedBefore:
+        description: Filter books published before a certain date.
+        type: date-only
+    responses:
+      200:
+        body:
+          application/json:
+            type: Book[]
+            example: |
+              [
+                {
+                  "id": "1",
+                  "title": "Moby Dick",
+                  "author": "Herman Melville",
+                  "publishedDate": "1851-10-18",
+                  "isbn": "978-1234567890",
+                  "summary": "Story of a ship captain's quest for revenge."
+                }
+              ]
+  post:
+    description: Add a new book.
+    body:
+      application/json:
+        type: Book
+        example: |
+          {
+            "title": "Pride and Prejudice",
+            "author": "Jane Austen",
+            "publishedDate": "1813-01-28",
+            "isbn": "978-0987654321",
+            "summary": "A tale of love and manners set in early 19th century England."
+          }
+    responses:
+      201:
+        body:
+          application/json:
+            type: Book
+            example: |
+              {
+                "id": "2",
+                "title": "Pride and Prejudice",
+                "author": "Jane Austen",
+                "publishedDate": "1813-01-28",
+                "isbn": "978-0987654321",
+                "summary": "A tale of love and manners set in early 19th century England."
+              }
+
+  /{bookId}:
+    get:
+      description: Retrieve a specific book by ID.
+      responses:
+        200:
+          body:
+            application/json:
+              type: Book
+              example: |
+                {
+                  "id": "1",
+                  "title": "Moby Dick",
+                  "author": "Herman Melville",
+                  "publishedDate": "1851-10-18",
+                  "isbn": "978-1234567890",
+                  "summary": "Story of a ship captain's quest for revenge."
+                }
+        404:
+          description: Book not found.
+    delete:
+      description: Delete a specific book by ID.
+      responses:
+        204:
+          description: Book successfully deleted.
+        404:
+          description: Book not found.
+````
+
+Metadata: The RAML starts with metadata that defines the version of RAML, the title, version, and base URI of the API.
+Types: This section defines the data structures used in the API. In this case, we’ve defined a Book type.
+Resources: The /books and /books/{bookId} are resources. Each resource can have multiple HTTP methods (get, post, delete, etc.).
+Query Parameters: The get method under /books accepts query parameters to filter books by author and publishedBefore.
+Responses: Each HTTP method has potential responses. For example, the get method can return a 200 OK response with a list of books, and the post method can return a 201 Created response with the created book’s details.
+URI Parameters: The /books/{bookId} resource uses a URI parameter {bookId} to represent a specific book ID.
+### _Links -_
 
 https://medium.com/@aleksej.gudkov/mulesoft-raml-example-a-step-by-step-guide-to-api-design-21361291a100
