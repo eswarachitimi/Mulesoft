@@ -6,6 +6,7 @@ JSON stands for `JavaScript Object Notation` and is a lightweight, text-based da
 - JSON (JavaScript Object Notation) and XML (eXtensible Markup Language) are popular formats for data representation.
 
 > **MIME type:** application/json
+
 > **JSON Editor** https://jsoneditoronline.org/
 
 ### Features
