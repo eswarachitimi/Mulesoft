@@ -1,6 +1,6 @@
 ### What is CSV?
 
-CSV stands for Comma-Separated Values. It's a plain text file format that uses commas to separate values and newlines to separate records. CSV files are often used to store tabular data, such as numbers and text. 
+CSV stands for Comma-Separated Values. It's a plain text file format that uses commas to separate values and newlines to separate records. CSV files allows data to be saved in a table structured format.
 
 > **MIME type (or) Media Type (or) Content-Type:** application/csv
 
