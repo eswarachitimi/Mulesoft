@@ -5,7 +5,7 @@ JSON stands for `JavaScript Object Notation` and is a lightweight, text-based da
 - JSON is widely used to transmit data between a server and a client as part of a web API request/response. Also used in APIs, configuration files, web development, data analysis, and software engineering. 
 - JSON (JavaScript Object Notation) and XML (eXtensible Markup Language) are popular formats for data representation.
 
-> **MIME type (or) Media Type:** application/json
+> **MIME type (or) Media Type (or) Content-Type:** application/json
 
 > **File Name:** <file_name>.json
 
