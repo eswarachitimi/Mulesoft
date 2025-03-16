@@ -6,13 +6,6 @@ CSV stands for Comma-Separated Values. It's a plain text file format that uses c
 
 > **File Name:** <File_Name>.csv
 
- - Structured data plays a critical role in data management and information exchange, and the CSV file format is one of the simplest formats for representing structured data.
- - CSV files are most commonly encountered in spreadsheets and databases.
- - Many enterprise software programs rely on CSV imports for onboarding user data. At the same time, plenty of programs have CSVs as their primary output for reports.
- - We can use a CSV file to move data between programs that aren't ordinarily able to exchange data.
- - It's a way to exchange structured information. What makes a CSV file unique is the way its content is organized.
- - Despite the name, a CSV doesn't need to rely on commas as the separator between pieces of information. This separator, called a delimiter, can be a semicolon, space, pipe symbol or some other character, though the comma is most common.
- 
 ![image](https://github.com/user-attachments/assets/40283da0-025c-4e9b-92b4-5f47c8f29c75)
 
 **_How to create a CSV file:_**
@@ -29,6 +22,10 @@ CSV stands for Comma-Separated Values. It's a plain text file format that uses c
 
 ### Features of CSV files
 
-- CSV files are simple, text-based, and easy to create and edit
-- CSV files can be used with most spreadsheet programs, such as Microsoft Excel or Google Spreadsheets
-- CSV files lack a graphical interface, which can make data manipulation more challenging 
+- CSV files are simple, text-based, and easy to create and edit.
+- CSV files can be used with most spreadsheet programs, such as Microsoft Excel or Google Spreadsheets and databases. 
+- Structured data plays a critical role in data management and information exchange, and the CSV file format is one of the simplest formats for representing structured data.
+ - Many enterprise software programs rely on CSV imports for onboarding user data. At the same time, plenty of programs have CSVs as their primary output for reports.
+ - We can use a CSV file to move data between programs that aren't ordinarily able to exchange data.
+ - Despite the name, a CSV doesn't need to rely on commas as the separator between pieces of information. `This separator, called a delimiter, can be a semicolon, space, pipe symbol or some other character, though the comma is most common`.
+ - CSV files lack a graphical interface, which can make data manipulation more challenging.
