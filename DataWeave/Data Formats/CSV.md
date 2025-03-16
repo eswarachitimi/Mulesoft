@@ -6,9 +6,9 @@ CSV stands for Comma-Separated Values. It's a plain text file format that uses c
 
 > **File Name:** <File_Name>.csv
 
-![image](https://github.com/user-attachments/assets/40283da0-025c-4e9b-92b4-5f47c8f29c75)
+![image](https://github.com/user-attachments/assets/049cdea4-2ff9-4a02-9f25-a3b5bddebe5e)
 
-**_How to create a CSV file:_**
+#### _How to create a CSV file:_
 
 ```
 1. Open Microsoft Excel
