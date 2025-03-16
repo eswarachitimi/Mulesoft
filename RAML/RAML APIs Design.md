@@ -320,6 +320,26 @@ types:
 - **Responses:** Each HTTP method has potential responses. For example, the get method can return a 200 OK response with a list of books, and the post method can return a 201 Created response with the created book’s details.
 - **URI Parameters:** The `/books/{bookId}` resource uses a URI parameter `{bookId}` to represent a specific book ID.
 
+### _Libraries vs Fragments -_
+
+In RAML (RESTful API Modeling Language), libraries are reusable collections of `data types, resource types, traits, and security schemas`, while fragments are smaller, more specific units like `data types or traits`.
+
+![image](https://github.com/user-attachments/assets/955dd091-ce10-4c77-8c02-d8b11d435af0)
+
+A RAML library is a collection of the data type declaration, traits declaration, security scheme declaration, and resource type declaration into a modular and reusable group. It also allows you to define multiple types within the same library.
+
+Fragments are basically used to externalize your security schemes, library, resource types, traits, data types, etc. They can be reused across any RAML. One of the characteristics of a fragment is that it can be published to Exchange, and it is possible to version your fragments. 
+
+```
+#%RAML 1.0
+title: Baeldung Foo REST Services API
+uses:
+  mySecuritySchemes: !include libraries/security.raml
+  myDataTypes: !include libraries/dataTypes.raml
+  myResourceTypes: !include libraries/resourceTypes.raml
+  myTraits: !include libraries/traits.raml
+```
+
 In API development, standardization is essential to ensure system maintenance and consistency. RAML (RESTful API Modeling Language) is a language that allows developers to model and document an API clearly and consistently. However, many developers face the challenge of repeating structures across projects, leading to inconsistencies, wasted time, and maintenance difficulties.
 
 To address these issues, RAML fragments emerge as an efficient solution. These fragments are reusable components that allow developers to define common parts of their APIs once and reuse them in different contexts. 
@@ -550,9 +570,11 @@ resourceTypes:
 
 RAML fragments are powerful tools that help standardize and reuse common components in APIs. They promote consistency, reduce code duplication, and facilitate API maintenance and updates. By using commonly used RAML fragments, developers can ensure their APIs are more robust and easier to manage. 
 
+### ResourceTypes
 
-![image](https://github.com/user-attachments/assets/365b1229-cea7-4833-b7ae-231ef1e3591f)
+ResourceTypes are like resources in that they can specify descriptions, methods, and parameters. A resource that uses resourceTypes can inherit its nodes. ResourceTypes can use and inherit from other resourceTypes.
 
+A ResourceType is basically a template that is used to define the descriptions, methods, and parameters that can be used by multiple resources without writing duplicate code. 
 
 
 ![image](https://github.com/user-attachments/assets/ff388fce-a915-4829-9126-9e07555e3d6c)
