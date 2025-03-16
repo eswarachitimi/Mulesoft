@@ -11,15 +11,11 @@ JSON stands for `JavaScript Object Notation` and is a lightweight, text-based da
 
 ### Features
 
-**_Human-readable:_** JSON is easy for people to read and understand. 
-
-**_Machine-parsable:_** JSON is easy for computers to understand and process. 
-
-**_Language-independent:_** JSON can be used to exchange data between different programming languages and platforms. While it is derived from JavaScript, JSON is supported by many programming languages including Python, Java, PHP, and more.
-
-**_Lightweight:_** JSON is a simple format that's easy to learn and troubleshoot. 
-
-**_Data structure:_** It represents data as objects, arrays, strings, numbers, booleans, and null.
+- **_Human-readable:_** JSON is easy for people to read and understand.
+- **_Machine-parsable:_** JSON is easy for computers to understand and process.
+- **_Language-independent:_** JSON can be used to exchange data between different programming languages and platforms. While it is derived from JavaScript, JSON is supported by many programming languages including Python, Java, PHP, and more.
+- **_Lightweight:_** JSON is a simple format that's easy to learn and troubleshoot.
+- **_Data structure:_** It represents data as objects, arrays, strings, numbers, booleans, and null.
 
 ### Use cases 
 
