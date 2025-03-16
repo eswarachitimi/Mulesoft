@@ -319,3 +319,240 @@ types:
 - **Query Parameters:** The get method under `/books` accepts query parameters to filter books by author and publishedBefore.
 - **Responses:** Each HTTP method has potential responses. For example, the get method can return a 200 OK response with a list of books, and the post method can return a 201 Created response with the created book’s details.
 - **URI Parameters:** The `/books/{bookId}` resource uses a URI parameter `{bookId}` to represent a specific book ID.
+
+In API development, standardization is essential to ensure system maintenance and consistency. RAML (RESTful API Modeling Language) is a language that allows developers to model and document an API clearly and consistently. However, many developers face the challenge of repeating structures across projects, leading to inconsistencies, wasted time, and maintenance difficulties.
+
+To address these issues, RAML fragments emerge as an efficient solution. These fragments are reusable components that allow developers to define common parts of their APIs once and reuse them in different contexts. 
+
+### DataType
+
+A DataType is a definition that specifies the structure and constraints of data that can be used in APIs. DataTypes are used to define the input and output formats of an API’s data. The DataType defined in this fragment contains the error structure.
+
+```
+#%RAML 1.0 DataType
+displayName: Common Response Error Format
+description: The common response format used for all API Calls.
+type: object
+properties:
+  code:
+    type: string
+    description: A unique code identifying the error.
+    required: false
+  message:
+    type: string
+    description: A message of the error.
+    required: true
+  correlationId:
+    type: string
+    description: A unique UUID for the request.
+    required: true
+  timestamp:
+    type: datetime-only
+    description: A timestamp identifying the time of the error.
+    required: false
+  details?:
+    type: array
+    items:
+      type: object
+      properties:
+        code:
+          type: string
+          description: A unique code identifying the error.
+          required: false
+        message:
+          type: string
+          description: A message of the error.
+          required: false
+  additionalDetails:
+    type: any
+    required: false
+```
+### Examples
+
+Examples are used to provide concrete instances of data expected or returned by an API. The examples in this fragment include messages returned by APIKIT and the API itself.
+
+```
+{
+    "code": "100200300",
+    "message": "Required field 'name' missing.",
+    "correlationId": "d449cf4e-987b-45bb-a56c-a386984ca50a",
+    "timestamp": "2020-01-01T00:00:01",
+    "details": [
+        {
+            "code": "100200300",
+            "message": "Required field 'name' missing."
+        }
+    ],
+    "additionalDetails": ""
+}
+```
+
+### Traits -
+
+Traits are reusable definition blocks that can be applied to multiple resources and methods of an API to add common functionalities. They allow developers to define a series of properties, such as query parameters, headers, responses, and other aspects that can be shared by multiple resources and methods in the API. This promotes consistency, code reuse, and facilitates API maintenance.
+
+The traits in this fragment are separated into errors, headers, queryParams, requests and responses.
+
+#### Errors
+
+The errors are divided into APIKIT errors and API errors. Below is an example of a trait containing the error structure returned by APIKIT.
+
+```
+#%RAML 1.0 Trait
+
+responses: 
+  400:
+    description: Bad Request
+    body: 
+        application/json:
+            type: !include ../../datatypes/responses/errors/error-type.raml
+            example: !include ../../examples/responses/errors/bad-request.json
+  404:
+    description: Resource Not Found
+    body: 
+        application/json:
+            type: !include ../../datatypes/responses/errors/error-type.raml
+            example: !include ../../examples/responses/errors/resource-not-found.json
+  405:
+    description: Method Not Allowed
+    body: 
+        application/json:
+            type: !include ../../datatypes/responses/errors/error-type.raml
+            example: !include ../../examples/responses/errors/method-not-allowed.json
+  406:
+    description: Not Acceptable
+    body: 
+        application/json:
+            type: !include ../../datatypes/responses/errors/error-type.raml
+            example: !include ../../examples/responses/errors/not-acceptable.json
+  415:
+    description: Unsupported Media Type
+    body: 
+        application/json:
+            type: !include ../../datatypes/responses/errors/error-type.raml
+            example: !include ../../examples/responses/errors/unsuported-media-type.json
+  501:
+    description: Not Implemented
+    body: 
+        application/json:
+            type: !include ../../datatypes/responses/errors/error-type.raml
+            example: !include ../../examples/responses/errors/not-implemented.json
+```
+
+#### Headers
+
+The headers contain the headers used between layers to maintain observability and those responded to in rate limit policies. The example below shows the header used between layers.
+
+```
+#%RAML 1.0 Trait
+headers:
+  x-correlation-id:
+    description: A unique transaction id used to correlate api requests end to end.
+    type: string
+    required: true
+    example: e393ef07-de7d-46c7-b514-27581be526d2
+  x-source-system:
+    type: string
+    description: A unique identification string for the source system. This could be a system name or hostname where a system is hosted on multiple hosts.
+    required: false
+    example: "Salesforce Experience API"
+```
+
+#### QueryParams
+
+The queryParams traits in this fragment are responsible for pagination and sorting. The next example shows the pagination trait.
+
+```
+#%RAML 1.0 Trait
+usage: Apply this trait to a GET method that supports pagination.
+queryParameters:
+  offset:
+    type: integer
+    required: false
+    default: 0
+    minimum: 0
+    description: Offset to start pagination search results.
+  limit:
+    type: integer
+    required: false
+    minimum: 1
+    maximum: 1000
+    description: The number of results per page.
+```
+
+#### Requests
+
+The requests trait defines the content-type and data type, allowing the type to be passed via the ‘typeName’ variable. The request traits in this fragment include other examples, such as form-data requests, JSON with and without examples, and XML.
+
+```
+#%RAML 1.0 Trait
+body:
+  application/json:
+    type: <<typeName>>
+```
+
+#### Responses
+
+The responses trait has a structure similar to requests, enabling reuse through variables. The response traits in this fragment include other examples, such as JSON response 200, 201, 202 with and without examples, 204, and XML 200.
+
+```
+#%RAML 1.0 Trait
+
+responses:
+  200:
+    body:
+      application/json:
+        type: <<typeName>>
+```
+
+#### ResourceTypes
+
+There are four ResourceTypes in this fragment: three specific to each layer and one generic. The difference between them is that the specific ones are based on the generic, but have different security schemas and common headers between layers.
+
+```
+#%RAML 1.0 Library
+usage: API RAML resource types
+
+traits:
+  hasCommonApikitErrorResponses: !include ../traits/errors/apikit-error-response.raml
+  hasCommonInternalServerErrorResponses: !include ../traits/errors/internal-server-error-response.raml
+
+resourceTypes: 
+  collection:
+    usage: Use this resourceType to represent any collection
+    description: A collection of <<resourcePathName|!uppercamelcase>>
+    get?:
+      description: Get a new <<resourcePathName|!uppercamelcase|!singularize>>
+      is: 
+          - hasCommonApikitErrorResponses
+          - hasCommonInternalServerErrorResponses
+    post?:
+        description: Create a new <<resourcePathName|!uppercamelcase|!singularize>>
+        is: 
+            - hasCommonApikitErrorResponses
+            - hasCommonInternalServerErrorResponses
+    put?:
+        description: Update a new <<resourcePathName|!uppercamelcase|!singularize>>
+        is: 
+            - hasCommonApikitErrorResponses
+            - hasCommonInternalServerErrorResponses
+    patch?:
+        description: Update parcial a new <<resourcePathName|!uppercamelcase|!singularize>>
+        is: 
+            - hasCommonApikitErrorResponses
+            - hasCommonInternalServerErrorResponses
+    delete?:
+        description: Delete a new <<resourcePathName|!uppercamelcase|!singularize>>
+        is: 
+            - hasCommonApikitErrorResponses
+            - hasCommonInternalServerErrorResponses
+```
+
+RAML fragments are powerful tools that help standardize and reuse common components in APIs. They promote consistency, reduce code duplication, and facilitate API maintenance and updates. By using commonly used RAML fragments, developers can ensure their APIs are more robust and easier to manage. 
+
+
+![image](https://github.com/user-attachments/assets/365b1229-cea7-4833-b7ae-231ef1e3591f)
+
+
+
+![image](https://github.com/user-attachments/assets/ff388fce-a915-4829-9126-9e07555e3d6c)
