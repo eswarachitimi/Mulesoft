@@ -1,5 +1,11 @@
-JSON (JavaScript Object Notation) is a standard, text-based format for storing and exchanging data easily. It is widely-used in APIs, configuration files, and data exchange between servers and clients. JSON (JavaScript Object Notation) and XML (eXtensible Markup Language) are popular formats for data representation.It's commonly used for web development, data analysis, and software engineering. 
+### What is JSON?
 
+JSON stands for `JavaScript Object Notation` and is a lightweight, text-based data format designed for easy data exchange.
+
+- JSON is widely used to transmit data between a server and a client as part of a web API request/response. Also used in APIs, configuration files, web development, data analysis, and software engineering. 
+- JSON (JavaScript Object Notation) and XML (eXtensible Markup Language) are popular formats for data representation.
+
+> **MIME type:** application/json
 > **JSON Editor** https://jsoneditoronline.org/
 
 ### Features
@@ -17,7 +23,7 @@ JSON (JavaScript Object Notation) is a standard, text-based format for storing a
 ### Use cases 
 
 - Transferring data between a server and a web application/mobile application.
-- Storing unstructured data in log files or NoSQL databases
+- Storing unstructured data in log files or NoSQL databases ( e.g., Mongo DB ).
 
 ### Data types 
 
@@ -85,3 +91,35 @@ A JSON array is an ordered collection of values enclosed in square brackets []. 
 ```
 
 > Here, fruits is a key, and the value is an array containing the elements "apple", "banana", and "cherry".
+
+### Comments in JSON
+
+JSON file with comments (using // for single-line comments).
+
+```
+{
+    // This is a comment
+    "name": "John Doe",
+    // The user's age
+    "age": 30,
+    // The user's email
+    "email": "john.doe@example.com"
+}
+```
+
+Another common approach is to include comments as part of the JSON data itself.This way, the comments are treated as regular key-value pairs.
+
+```
+{
+    "_comment": "This JSON file contains user data",
+    "name": "John Doe",
+    "age": 30,
+    "email": "john.doe@example.com",
+    "address": {
+        "_comment": "Address details",
+        "street": "123 Main St",
+        "city": "Anytown"
+    }
+}
+```
+
