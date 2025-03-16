@@ -41,16 +41,16 @@
 
 ### Key Features:
 
-- Data Structure: XML uses a tree-like structure with elements, attributes, and text content to organize data.
-- Human and Machine Readable: XML is designed to be both human-readable and machine-readable, allowing for easy data interpretation and processing.
-- Standardized Syntax: XML has a standardized syntax, ensuring that data can be parsed and interpreted correctly across different systems and platforms.
+- **Data Structure:** XML uses a tree-like structure with elements, attributes, and text content to organize data.
+- **Human and Machine Readable:** XML is designed to be both human-readable and machine-readable, allowing for easy data interpretation and processing.
+- **Standardized Syntax:** XML has a standardized syntax, ensuring that data can be parsed and interpreted correctly across different systems and platforms.
    
 ### Uses:
 
 XML is used in various applications, including:
 
-- Data Interchange: Sharing data between different applications, databases, and systems.
-- Web Services: Facilitating communication and data exchange between web services.
-- E-commerce: Storing and exchanging product information and transaction data.
-- Document Formats: Storing documents and other data in a structured format (e.g., Microsoft Office formats like .docx, .xlsx, .pptx).
-- Configuration Files: Storing application settings and configurations. 
+- **Data Interchange:** Sharing data between different applications, databases, and systems.
+- **Web Services:** Facilitating communication and data exchange between web services.
+- **E-commerce:** Storing and exchanging product information and transaction data.
+- **Document Formats:** Storing documents and other data in a structured format (e.g., Microsoft Office formats like .docx, .xlsx, .pptx).
+- **Configuration Files:** Storing application settings and configurations. 
