@@ -6,7 +6,7 @@ CSV stands for Comma-Separated Values. It's a plain text file format that uses c
 
 > **File Name:** <File_Name>.csv
 
-![image](https://github.com/user-attachments/assets/049cdea4-2ff9-4a02-9f25-a3b5bddebe5e)
+![image](https://github.com/user-attachments/assets/70870834-124f-48f8-abed-d2f48184b849)
 
 #### _How to create a CSV file:_
 
