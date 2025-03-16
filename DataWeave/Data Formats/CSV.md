@@ -6,6 +6,11 @@ CSV stands for Comma-Separated Values. It's a plain text file format that uses c
 
 > **File Name:** <File_Name>.csv
 
+ - CSV files are most commonly encountered in spreadsheets and databases.
+ - We can use a CSV file to move data between programs that aren't ordinarily able to exchange data.
+ - It's a way to exchange structured information. What makes a CSV file unique is the way its content is organized.
+ - Despite the name, a CSV doesn't need to rely on commas as the separator between pieces of information. This separator, called a delimiter, can be a semicolon, space, pipe symbol or some other character, though the comma is most common.
+ 
 ![image](https://github.com/user-attachments/assets/40283da0-025c-4e9b-92b4-5f47c8f29c75)
 
 **_How to create a CSV file:_**
