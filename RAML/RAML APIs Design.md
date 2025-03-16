@@ -36,7 +36,7 @@ mediaType: application/json
 - **baseUri:** The base URI of the API, using `{version}` to represent the version number dynamically.
 - **mediaType:** Sets the default media type for requests and responses.
 
-### _let’s define a GET method for fetching customer data_
+#### _let’s define a GET method for fetching customer data_
 
 ```
 /customers:
