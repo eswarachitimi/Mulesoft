@@ -2,7 +2,9 @@
 
  XML `Extensible Markup Language`, is a markup language designed to store and transport data, allowing for structured and flexible data representation and exchange between systems. 
 
-> **MIME type:** application/xml
+> **MIME type (or) Media Type (or) Content-Type:** application/xml
+
+> **File Name:** <File_Name>.xml
 
 > **XML Editor:** https://jsonformatter.org/xml-formatter
 
