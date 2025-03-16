@@ -73,7 +73,7 @@ mediaType: application/json
 - **400:** Error code for bad requests.
 - **500:** Error code for server errors.
 
-**_Define a reusable Customer type to enforce consistent data structure across endpoints_**
+#### _Define a reusable Customer type to enforce consistent data structure across endpoints_**
 
 ```
 types:
@@ -97,7 +97,7 @@ types:
 - **Customer:** Defines an object structure for customer data, including `id`, `name`, and `email`.
 - **required: true:** Specifies that `name` and `email` are required fields for a valid customer object.
 
-### _Implement Security (Optional)_
+#### _Implement Security (Optional)_
 
 If your API requires authentication, you can add security schemes. Here’s an example using OAuth 2.0:
 
@@ -123,9 +123,10 @@ securitySchemes:
 - **securitySchemes:** Defines available security configurations for the API.
 - **OAuth 2.0:** Configures OAuth 2.0 as the security method, with endpoints for obtaining authorization tokens.
 
-### _RAML file for Customer API -_
+#### _Sample RAML files-_
 
-### `customer-api.raml`
+###### `customer-api.raml`
+
 ```
 #%RAML 1.0
 title: Customer API
@@ -189,7 +190,7 @@ types:
         description: Internal server error
 ```
 
-### `books-api.raml`
+##### `books-api.raml`
 
 ```
 #%RAML 1.0
@@ -344,7 +345,7 @@ In API development, standardization is essential to ensure system maintenance an
 
 To address these issues, RAML fragments emerge as an efficient solution. These fragments are reusable components that allow developers to define common parts of their APIs once and reuse them in different contexts. 
 
-### DataType
+#### DataType
 
 A DataType is a definition that specifies the structure and constraints of data that can be used in APIs. DataTypes are used to define the input and output formats of an API’s data. The DataType defined in this fragment contains the error structure.
 
@@ -387,7 +388,7 @@ properties:
     type: any
     required: false
 ```
-### Examples
+#### Examples
 
 Examples are used to provide concrete instances of data expected or returned by an API. The examples in this fragment include messages returned by APIKIT and the API itself.
 
@@ -407,7 +408,7 @@ Examples are used to provide concrete instances of data expected or returned by 
 }
 ```
 
-### Traits -
+#### Traits -
 
 Traits are reusable definition blocks that can be applied to multiple resources and methods of an API to add common functionalities. They allow developers to define a series of properties, such as query parameters, headers, responses, and other aspects that can be shared by multiple resources and methods in the API. This promotes consistency, code reuse, and facilitates API maintenance.
 
