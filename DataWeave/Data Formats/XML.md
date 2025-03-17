@@ -86,3 +86,7 @@ https://www.w3schools.com/xml/xpath_intro.asp
 ### XML Schema
 
 https://www.w3schools.com/xml/schema_intro.asp
+
+### XML DOM
+
+https://www.w3schools.com/xml/dom_intro.asp
