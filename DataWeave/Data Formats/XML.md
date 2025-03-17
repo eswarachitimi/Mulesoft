@@ -102,7 +102,7 @@ This XML carries information about a table (a piece of furniture):
 </table>
 ```
 
-If these XML fragments were added together, there would be a name conflict. Both contain a <table> element, but the elements have different content and meaning.
+If these XML fragments were added together, there would be a name conflict. Both contain a `<table>` element, but the elements have different content and meaning.
 
 A user or an XML application will not know how to handle these differences.
 
