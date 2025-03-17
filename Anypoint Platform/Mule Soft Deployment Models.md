@@ -1,13 +1,30 @@
 
 ## Mule Soft Deployment Options 
 
-When we create `Mule applications` using Anypoint Studio, we must deploy them using one of the deployment options supported by `Anypoint Runtime Manager`.
+Mule applications that run in the `Anypoint Studio` or `Anypoint Code Builder` IDEs deploy to an embedded test server in within the IDE. When we create `Mule applications` using Anypoint Studio or Anypoint Code Builder, we must deploy them using one of the deployment options supported by `Anypoint Runtime Manager`.
+
+A Deployment model defines the cloud services you are consuming and the responsibility model for who manages them.
+
+It defines the architecture, scalability of the computing resources, what you can change, the services provided to you, and how much of the build you own.
+
+The deployment models also define relationships between the cloud infrastructure and users.
+
+Before we start with deployment model lets understand the basics concept to understand the distinguishing factors , Control plane and Runtime plane.
 
 ![image](https://github.com/user-attachments/assets/16f576fe-5424-4a2b-8cfe-63c53cf43de5)
 
-
 ![image](https://github.com/user-attachments/assets/e8eeaaee-e38e-44a9-9a2c-1c2aa1729ba4)
 
+> **Control plane**
+
+this is the component of Anypoint platform that is used to design, deploy and manage the APIs and the mule applications.
+This includes the Design center , Management center(API manager — helps in managing policies , Runtime manager — helps in scaling out or scaling up , access management — helps in managing access ) , exchange where the assets are publish for reusability purpose.
+
+> **Runtime plane**
+
+the component of Anypoint platform used for deployment of applications and made available to users.
+this includes the Mule runtime server and supporting services ,for example : environment to run the applications , Anypoint MQ , object store , persistent queues(available on-premise).
+Based on the location of control plane and runtime plane , the deployment models are as follows:
 ### Cloudhub 1.0
 
 ### Cloudhub 2.0
