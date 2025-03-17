@@ -12,6 +12,8 @@
 - **Flexibility:** XML allows you to create custom tags to define your own data structures, making it highly adaptable to various data formats and applications. 
 - While both XML and JSON are used for data exchange, JSON is generally considered simpler and more lightweight than XML.
 
+#### Sample XML Message Explanation
+
 ![image](https://github.com/user-attachments/assets/5f27a34a-5990-48d7-9942-462be0a63ad4)
 
 - The XML prolog is optional. If it exists, it must come first in the document.A prolog defines the XML version and the character encoding `<?xml version="1.0" encoding="UTF-8"?>`. 
