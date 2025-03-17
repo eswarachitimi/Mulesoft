@@ -8,10 +8,27 @@
 
 > **XML Editor:** https://jsonformatter.org/xml-formatter
 
+- **Purpose:** XML is used to describe data, not to display it like HTML, and is designed for structured data storage and exchange, facilitating data sharing between different applications and systems.
+- **Flexibility:** XML allows you to create custom tags to define your own data structures, making it highly adaptable to various data formats and applications. 
 - While both XML and JSON are used for data exchange, JSON is generally considered simpler and more lightweight than XML.
 
 ![image](https://github.com/user-attachments/assets/5f27a34a-5990-48d7-9942-462be0a63ad4)
 
+- The XML prolog is optional. If it exists, it must come first in the document.A prolog defines the XML version and the character encoding `<?xml version="1.0" encoding="UTF-8"?>`. 
+- XML documents must contain one root element that is the parent of all other elements
+- The next line is the root element of the document `<bookstore>`
+- The next line starts a <book> element `<book category="cooking">`
+- The `<book>` elements have 4 child elements: `<title>, <author>, <year>, <price>`.
+- The next line ends the book element `</book>`. In XML, it is illegal to omit the closing tag. All elements must have a closing tag.
+
+> Note: The XML prolog does not have a closing tag! This is not an error. The prolog is not a part of the XML document.
+
+> XML tags are case sensitive. The tag `<Book>` is different from the tag `<book>`. Opening and closing tags must be written with the same case.
+
+> In XML, all elements must be properly nested within each other
+
+- You can assume, from this example, that the XML document contains information about books in a bookstore.
+  
 > **Sample Example -**
 
 ```
@@ -38,9 +55,6 @@
 </bookstore>
 ```
 
-- **Purpose:** XML is used to describe data, not to display it like HTML, and is designed for structured data storage and exchange, facilitating data sharing between different applications and systems.
-- **Flexibility:** XML allows you to create custom tags to define your own data structures, making it highly adaptable to various data formats and applications. 
-
 ### Key Features:
 
 - **Data Structure:** XML uses a tree-like structure with elements, attributes, and text content to organize data.
@@ -56,3 +70,19 @@ XML is used in various applications, including:
 - **E-commerce:** Storing and exchanging product information and transaction data.
 - **Document Formats:** Storing documents and other data in a structured format (e.g., Microsoft Office formats like .docx, .xlsx, .pptx).
 - **Configuration Files:** Storing application settings and configurations. 
+
+### WSDL
+
+https://www.w3schools.com/xml/xml_wsdl.asp
+
+### SOAP XML
+
+https://www.w3schools.com/xml/xml_soap.asp
+
+### XML and XPATH
+
+https://www.w3schools.com/xml/xpath_intro.asp
+
+### XML Schema
+
+https://www.w3schools.com/xml/schema_intro.asp
