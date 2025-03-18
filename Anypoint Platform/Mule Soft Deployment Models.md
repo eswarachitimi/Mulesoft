@@ -1,7 +1,7 @@
 
 ## Mule Soft Deployment Options 
 
-Mule applications that run in the `Anypoint Studio` or `Anypoint Code Builder` IDEs deploy to an embedded test server in within the IDE. When we create `Mule applications` using Anypoint Studio or Anypoint Code Builder, we must deploy them using one of the deployment options supported by `Anypoint Runtime Manager`.
+Mule applications that run in the `Anypoint Studio` or `Anypoint Code Builder` IDEs deploy to an embedded test server within the IDE. When we create `Mule applications` using Anypoint Studio or Anypoint Code Builder, we must deploy them using one of the deployment options supported by `Anypoint Runtime Manager`.
 
 A Deployment model defines the cloud services you are consuming and the responsibility model for who manages them.
 
@@ -11,20 +11,35 @@ The deployment models also define relationships between the cloud infrastructure
 
 Before we start with deployment model lets understand the basics concept to understand the distinguishing factors , Control plane and Runtime plane.
 
-![image](https://github.com/user-attachments/assets/16f576fe-5424-4a2b-8cfe-63c53cf43de5)
+![image](https://github.com/user-attachments/assets/fb84e3a7-0c18-4604-9069-4d3c4f7174a8)
+
+> #### **_Control plane_**
+
+This is the component of Anypoint platform that is used to design, deploy and manage the APIs and the mule applications. This includes -
+
+- Design center
+- Management center
+  -  API manager — helps in managing policies
+  -  Runtime manager — helps in scaling out or scaling up
+  -  access management — helps in managing access
+-  Exchange where the assets are publish for reusability purpose.
+
+> #### **_Runtime plane_**
+
+The component of Anypoint platform that is used for deployment of applications and made available to users. This includes -
+
+ - Mule runtime engine/server
+   - environment to run the applications 
+ - Mule runtime services
+   - Anypoint MQ
+   - object store
+   - persistent queues(available on-premise)
+   - Enterprise Security
 
 ![image](https://github.com/user-attachments/assets/e8eeaaee-e38e-44a9-9a2c-1c2aa1729ba4)
 
-> **Control plane**
-
-this is the component of Anypoint platform that is used to design, deploy and manage the APIs and the mule applications.
-This includes the Design center , Management center(API manager — helps in managing policies , Runtime manager — helps in scaling out or scaling up , access management — helps in managing access ) , exchange where the assets are publish for reusability purpose.
-
-> **Runtime plane**
-
-the component of Anypoint platform used for deployment of applications and made available to users.
-this includes the Mule runtime server and supporting services ,for example : environment to run the applications , Anypoint MQ , object store , persistent queues(available on-premise).
 Based on the location of control plane and runtime plane , the deployment models are as follows:
+
 ### Cloudhub 1.0
 
 ### Cloudhub 2.0
