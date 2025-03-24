@@ -184,6 +184,20 @@ The purpose of using an URI is to give the namespace a unique name. However, com
 
 ### WSDL
 
+WSDL, or `Web Services Description Language`, is an XML-based language used to describe the functionality of a web service, acting as a contract between the service provider and the service consumer, outlining operations, input/output formats, and protocols. 
+
+##### Relationship to SOAP:
+
+While WSDL is not limited to SOAP, it's commonly used with SOAP-based web services, as SOAP is a messaging protocol that WSDL can describe. 
+
+##### WSDL 2.0:
+
+Version 2.0 of WSDL provides a more flexible and extensible model for describing web services.
+
+##### Tools:
+
+Tools like SoapUI can utilize WSDL files to generate test requests, assertions, and mock services for testing SOAP-based services. 
+
 https://www.w3schools.com/xml/xml_wsdl.asp
 
 ### SOAP XML
