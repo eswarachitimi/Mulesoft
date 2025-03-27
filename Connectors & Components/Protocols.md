@@ -26,5 +26,6 @@ To make communication successful between devices, some rules and procedures shou
 - **_FTP (File Transfer Protocol):_** Used for transferring files between computers on a network. It allows users to upload and download files.SMTP (Simple Mail Transfer Protocol): Used for sending emails. It transfers emails from a client to a server or between servers.
 - **_DNS (Domain Name System):_** It is used to translates human-readable domain names (like www.example.com) into IP addresses that computers use to identify each other on the network.
 - **_DHCP (Dynamic Host Configuration Protocol):_** Automatically assigns IP addresses to devices on a network, ensuring each device has a unique address.
-- **_SSH (Secure Shell):` Provides a secure way to access and manage devices over a network. It encrypts the data, making it safe from eavesdropping.
+- **_SSH (Secure Shell):_** Provides a secure way to access and manage devices over a network. It encrypts the data, making it safe from eavesdropping.
 - **_SNMP (Simple Network Management Protocol):_** Used for managing and monitoring network devices like routers, switches, and servers. It collects and organizes information about these devices
+- **_SMTP (Simple Mail Transfer Protocol):_** SMTP is the driving force behind email exchange, managing the formatting, routing, and delivery of messages between mail servers.
