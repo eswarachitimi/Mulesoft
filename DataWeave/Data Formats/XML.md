@@ -208,9 +208,34 @@ Version 2.0 of WSDL provides a more flexible and extensible model for describing
 
 Tools like SoapUI can utilize WSDL files to generate test requests, assertions, and mock services for testing SOAP-based services. 
 
-https://www.w3schools.com/xml/xml_wsdl.asp
+https://www.tutorialspoint.com/wsdl/wsdl_introduction.htm
 
 ### SOAP XML
+
+SOAP -  `Simple Object Access Protocol` is a messaging protocol that uses XML to format messages for exchanging data between applications. 
+It's a standard for building web services, allowing applications to communicate and interact with each other, even if they are on different platforms. 
+SOAP messages are typically sent over HTTP, but other protocols can also be used. 
+
+##### SOAP Message Structure: 
+
+A SOAP message is an XML document with a specific structure:
+
+- `<Envelope>:` The root element of the SOAP message.
+- `<Header> (optional):` Contains information for processing the message along the way.
+- `<Body> (mandatory):` Contains the actual data being transmitted, including the request or response.
+- `<Fault> (optional):` Used to report errors that occur during processing. 
+
+##### How SOAP Works:
+
+- A client application sends a SOAP request (an XML document) to a server application.
+- The request contains information about the method to be called and the parameters to be passed.
+- The server application processes the request and sends back a SOAP response (another XML document) containing the results.
+  
+##### SOAP vs. REST:
+
+- REST (Representational State Transfer) is another popular protocol for building web services.
+- While SOAP uses XML for message formatting, REST is more flexible and supports various data formats, including XML, JSON, and plain text.
+- SOAP is often considered more suitable for complex, enterprise-level applications, while REST is often preferred for simpler web services. 
 
 https://www.w3schools.com/xml/xml_soap.asp
 
