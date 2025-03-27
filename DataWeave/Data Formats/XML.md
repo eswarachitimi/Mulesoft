@@ -184,7 +184,17 @@ The purpose of using an URI is to give the namespace a unique name. However, com
 
 ### WSDL
 
-WSDL, or `Web Services Description Language`, is an XML-based language used to describe the functionality of a web service, acting as a contract between the service provider and the service consumer, outlining operations, input/output formats, and protocols. 
+WSDL, or `Web Services Description Language`, is an XML-based language used to describe the functionality of a web service. acting as a contract between the service provider and the service consumer, outlining operations, input/output formats, and protocols. 
+
+##### Key Elements:
+
+A WSDL document typically includes sections for:
+
+- `types:` Defines the data types used by the web service (using XML Schema).
+- `message:` Defines the structure of the messages exchanged between the client and the service.
+- `portType:` Describes the operations that the service offers and the messages they use.
+- `binding:` Specifies the protocol and data format used to communicate with the service (e.g., SOAP over HTTP).
+- `service:` Defines the endpoints (ports) where the service can be accessed. 
 
 ##### Relationship to SOAP:
 
