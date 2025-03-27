@@ -6,6 +6,8 @@ To make communication successful between devices, some rules and procedures shou
 
 ![image](https://github.com/user-attachments/assets/20cef13c-4438-4e23-aa12-3dd4bfb1fecb)
 
+![image](https://github.com/user-attachments/assets/cd45f774-dd53-4ef9-8d24-536e07d3c357)
+
 #### Types of Protocol:
 
 - **_Network Layer Protocols :_** Network layer protocols operate in the network layer which is also known as the Layer 3 of the network  architecture. Network layer protocols are responsible for packet routing, forwarding, and addressing of data packets throughout the network. `IP` and `ICMP` are the network layer protocols.
