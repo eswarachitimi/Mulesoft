@@ -27,9 +27,13 @@ The Receiver’s MAC address is obtained by placing an ARP (Address Resolution P
 
 ## Layer 3 – Network Layer
 
+The network layer works for the transmission of data from one host to the other located in different networks. It also takes care of packet routing i.e. selection of the shortest path to transmit the packet, from the number of routes available. The sender and receiver’s IP address are placed in the header by the network layer. Segment in the Network layer is referred to as Packet. Network layer is implemented by networking devices such as `routers` and `switches`.
+
 ![image](https://github.com/user-attachments/assets/e057b255-dc96-469c-9b47-094051de469f)
 
 ## Layer 4 – Transport Layer
+
+The transport layer provides services to the application layer and takes services from the network layer. The data in the transport layer is referred to as `Segments`. It is responsible for the end-to-end delivery of the complete message. The transport layer also provides the acknowledgment of the successful data transmission and re-transmits the data if an error is found. Protocols used in Transport Layer are 1TCP, UDP NetBIOS, PPTP1.
 
 ![image](https://github.com/user-attachments/assets/4f7a3fd1-d815-4ff1-a83b-4564fb2da8e2)
 
