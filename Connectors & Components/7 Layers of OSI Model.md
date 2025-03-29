@@ -1,4 +1,46 @@
-
-
+The OSI `(Open Systems Interconnection)` Model is a set of rules that explains how different computer systems communicate over a network. The OSI Model consists of 7 layers and each layer has specific functions and responsibilities.
 
 ![image](https://github.com/user-attachments/assets/5b0ea920-a663-441d-b269-a64e74b37d49)
+
+## Layer 1 – Physical Layer
+
+The lowest layer of the OSI reference model is the Physical Layer. It is responsible for the actual physical connection between the devices. 
+- The physical layer contains information in the form of `bits`.
+- Common physical layer devices are `Hub, Repeater, Modem, and Cables`.
+
+![image](https://github.com/user-attachments/assets/a229005a-56ff-4b08-9c69-3d452a537fc4)
+
+## Layer 2 – Data Link Layer (DLL)
+
+The data link layer is responsible for the node-to-node delivery of the message. The main function of this layer is to make sure data transfer is error-free from one node to another, over the physical layer. When a packet arrives in a network, it is the responsibility of the DLL to transmit it to the Host using its MAC address. `Packet` in the Data Link layer is referred to as `Frame`. `Switches` and `Bridges` are common Data Link Layer devices.
+
+The Data Link Layer is divided into two sublayers:
+
+- Logical Link Control (LLC)
+- Media Access Control (MAC)
+
+The packet received from the Network layer is further divided into frames depending on the frame size of the NIC (Network Interface Card). DLL also encapsulates Sender and Receiver’s MAC address in the header.
+
+The Receiver’s MAC address is obtained by placing an ARP (Address Resolution Protocol) request onto the wire asking, “Who has that IP address?” and the destination host will reply with its MAC address.
+
+![image](https://github.com/user-attachments/assets/c752a80d-6bf8-45cb-9476-cf9abab49040)
+
+## Layer 3 – Network Layer
+
+![image](https://github.com/user-attachments/assets/e057b255-dc96-469c-9b47-094051de469f)
+
+## Layer 4 – Transport Layer
+
+![image](https://github.com/user-attachments/assets/4f7a3fd1-d815-4ff1-a83b-4564fb2da8e2)
+
+## Layer 5 – Session Layer
+
+![image](https://github.com/user-attachments/assets/94efb8ae-03b6-4ded-af71-50ae2cdea250)
+
+## Layer 6 – Presentation Layer
+
+![image](https://github.com/user-attachments/assets/f44c82f1-ab1f-45d9-8195-6073e26a3a75)
+
+## Layer 7 – Application Layer
+
+![image](https://github.com/user-attachments/assets/7779d7b1-f870-4bec-91e1-a779f7f0e699)
