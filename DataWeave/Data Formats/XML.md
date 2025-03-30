@@ -225,6 +225,8 @@ A SOAP message is an XML document with a specific structure:
 - `<Body> (mandatory):` Contains the actual data being transmitted, including the request or response.
 - `<Fault> (optional):` Used to report errors that occur during processing. 
 
+![image](https://github.com/user-attachments/assets/dba96a1a-07aa-4756-a990-b901636eb273)
+
 ##### How SOAP Works:
 
 - A client application sends a SOAP request (an XML document) to a server application.
