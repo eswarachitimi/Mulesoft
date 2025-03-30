@@ -239,6 +239,8 @@ A SOAP message is an XML document with a specific structure:
 - While SOAP uses XML for message formatting, REST is more flexible and supports various data formats, including XML, JSON, and plain text.
 - SOAP is often considered more suitable for complex, enterprise-level applications, while REST is often preferred for simpler web services. 
 
+![image](https://github.com/user-attachments/assets/e2b113b8-05f6-49b8-9701-0d307d0c879e)
+
 https://www.w3schools.com/xml/xml_soap.asp
 
 ### XML and XPATH
