@@ -1,3 +1,56 @@
+# Types of Network Devices
+
+Network devices are hardware used to connect and manage network communication, including routers, switches, hubs, bridges, repeaters, firewalls, gateways, and wireless access points. 
+
+Here's a breakdown of common network devices:
+
+#### 1. Routers:
+- Connects different networks (like your home network and the internet) and forwards data packets between them.
+
+`Example:` A router in your home connects your devices to the internet. 
+
+#### 2. Switches:
+- Connects devices within a local network and directs data traffic to the intended recipient.
+  
+`Example:` A network switch in an office connects computers, printers, and other devices on the same network. 
+
+#### 3. Hubs:
+- Connects multiple devices on a network, but broadcasts data to all connected devices, regardless of the intended recipient.
+
+`Example:` A hub was a common device in older networks, but is largely replaced by switches. 
+
+#### 4. Bridges:
+- Connects two or more network segments, allowing them to communicate as if they were a single network.
+
+`Example:` A bridge can connect a wired network to a wireless network. 
+
+#### 5. Repeaters:
+- Amplifies and retransmits network signals to extend the range of a network.
+  
+`Example:` A repeater can extend the range of a wireless network. 
+
+#### 6. Firewalls:
+- Protects a network by filtering incoming and outgoing network traffic based on security rules.
+
+`Example:` A firewall can prevent unauthorized access to a network. 
+
+#### 7. Gateways:
+- Connects different networks with different protocols, acting as a bridge between them.
+  
+`Example:` A gateway can connect a company's internal network to the internet.
+
+#### 8. Wireless Access Points (WAPs):
+- Provides wireless connectivity to a network, allowing devices to connect wirelessly.
+
+`Example:` A WAP in a home or office allows devices to connect to the network wirelessly. 
+
+#### 9. Network Interface Cards (NICs):
+- Allows a device to connect to a network and transmit data.
+
+`Example:` A NIC is a hardware component inside a computer that allows it to connect to a network. 
+
+![image](https://github.com/user-attachments/assets/43393c9d-885e-4aea-b007-5d21f2acbbf5)
+
 # OSI Model :
 
 The OSI `(Open Systems Interconnection)` Model is a set of rules that explains how different computer systems communicate over a network. The OSI Model consists of 7 layers and each layer has specific functions and responsibilities.
