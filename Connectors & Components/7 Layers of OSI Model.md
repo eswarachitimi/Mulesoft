@@ -4,7 +4,7 @@ Network devices are hardware used to connect and manage network communication, i
 
 Here's a breakdown of common network devices:
 
-#### 1. Routers:
+### 1. Routers:
 - Connects different networks (like your home network and the internet) and forwards data packets between them.
 
 `Example:` A router in your home connects your devices to the internet. 
