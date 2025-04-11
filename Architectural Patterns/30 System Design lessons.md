@@ -1,0 +1,30 @@
+- Clarify both functional and non-functional requirements before designing.
+- Assume everything can and will fail. Make it fault tolerant ( system's ability to continue operating correctly, even in the event of failures ).
+- Don't add functionality until it's necessary. Avoid over-engineering.
+- There is no perfect solution. It’s all about tradeoffs (an act of balancing between two opposing situations, qualities or things, both of which you want and need )
+- Prefer horizontal scaling over vertical scaling for scalability.
+- Use load balancers to distribute traffic and ensure high availability.
+- Consider using SQL databases for structured data and ACID transactions.
+- Opt for NoSQL databases when dealing with unstructured data.
+- Use database sharding ( The practice of dividing a large database or dataset into smaller, more manageable parts called "shards" to improve performance, scalability, and data distribution across multiple servers or machines) to scale SQL databases horizontally.
+- Use database indexing to optimize read queries.
+- Use rate limiting to prevent system overload and DOS(denial-of-service) attacks.
+- Use websockets for real-time communication.
+- Employ heartbeats / health checks for failure detection.
+- Consider using a message queue for asynchronous communication.
+- Implement data partitioning and sharding for large datasets.
+- Consider denormalizing databases ( the process of intentionally reintroducing controlled redundancy into a database schema to improve query performance, especially when dealing with read-heavy applications ) for read-heavy workloads.
+- Consider using event-driven architecture for decoupled systems.
+- Use CDNs (  Content Delivery Network ) to reduce latency for a global user base.
+- Use write-through cache for write-heavy applications.
+- Use read-through cache for read-heavy applications.
+- Use blob storage to store media files like files, images, videos etc..
+- Implement data replication and redundancy to avoid single point of failures.
+- Implement autoscaling to handle traffic spikes smoothly.
+- Use asynchronous processing to run non-urgent/background tasks.
+- Make operations idempotent where possible to simplify retry logic and error handling.
+- Prefer microservices architecture over monoliths for scalability, modularity, and maintainability.
+- Consider using an API gateway when you have multiple microservices.
+- Use the circuit breaker pattern to prevent cascading ( chain reations - an initial event or action triggers a series of subsequent effects) failures.
+- Design clear and consistent APIs and incorporate security.
+- Consider using a data lake or data warehouse for analytics and reporting.
