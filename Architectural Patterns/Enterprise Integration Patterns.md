@@ -38,6 +38,7 @@ This pattern catalog includes 65 integration patterns that are organized as foll
 
 ![image](https://github.com/user-attachments/assets/4fea0cef-ce06-4624-8452-b82ec694f73c)
 
+## What products implement or use Enterprise Integration Patterns?
 
 - **Open source ESB's** like Mule ESB, JBoss Fuse, Open ESB, WSo2, Spring Integration, or Talend ESB
 - **Message Brokers** like ActiveMQ, Apache Kafka, or RabbitMQ
