@@ -98,3 +98,10 @@ The actions that Mule performs as a result of back-pressure are specific to each
  - In some cases, a source might disconnect from a remote system to avoid getting more data than it can process and then reconnect after the server state is normalized.
    
 ![image](https://github.com/user-attachments/assets/80c1c01e-2678-4a79-8eda-3cfc6179e58c)
+
+## Takeaways from performance testing
+
+- The performance of Mule 4.3 and ability to withstand stress tests outperformed my expectations. It can handle more than 500 API calls per second in a small worker of 500 MB, and the CPU is still below 80%.
+- The overhead of DataWeave is not excessive. Although the API has used operations such as now(), upper(), substringAfterLast(), the response time was not affected.
+- The invocation of other APIs using HTTP Request is very fast, as it only adds five milliseconds to the response time. Keep in mind that Client ID enforcement policies are executed in every request of the API, but they are not adding significant overhead.
+- The number of threads of the worker was able to scale from the initial set of 83 threads to 118, which is an increase of 35 threads
