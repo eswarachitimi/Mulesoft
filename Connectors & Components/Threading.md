@@ -70,9 +70,15 @@ org.mule.runtime.scheduler.SchedulerPoolStrategy=UBER
 
 ![image](https://github.com/user-attachments/assets/89953737-d377-4b56-b34c-340d02f005d9)
 
+#### Try scope with Transaction
+
 ![image](https://github.com/user-attachments/assets/19bee320-9808-4ff9-95cf-86f87f983a3b)
 
+#### JMS Transactional
+
 ![image](https://github.com/user-attachments/assets/2cc51f07-9f47-40d3-809e-01270b063894)
+
+#### JMS transactional with Async scope
 
 ![image](https://github.com/user-attachments/assets/06d6ebbe-c3ef-4612-af17-bec1814bb0ff)
 
