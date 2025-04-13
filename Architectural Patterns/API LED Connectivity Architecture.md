@@ -26,3 +26,17 @@ _**Data Transformation and Enrichment:**_ APIs can act as intermediaries, enabli
 ### Benefits:
 
 ![Benefits_ - visual selection](https://github.com/user-attachments/assets/4cd785d1-1486-4a6e-9281-f8121893ce3d)
+
+
+## Legacy Bank -Problems
+
+![image](https://github.com/user-attachments/assets/4e2d0e96-c4ae-4c0f-a35e-ff47d16a07d6)
+
+![image](https://github.com/user-attachments/assets/a8296c9d-0d51-4131-ae5c-b759b0543338)
+
+![image](https://github.com/user-attachments/assets/ed11523a-731f-4bc9-81ef-634c992ff872)
+
+![image](https://github.com/user-attachments/assets/82152140-bcdb-4578-9536-bdd8f23e97cb)
+
+
+
