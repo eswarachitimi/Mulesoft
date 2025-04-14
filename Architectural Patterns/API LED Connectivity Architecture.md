@@ -27,7 +27,7 @@ _**Data Transformation and Enrichment:**_ APIs can act as intermediaries, enabli
 
 ### Cons
 
-- Net work calls there by incurring Network Latency because of multiple layers ( creats multiple nodes of API Network ).
+- Network calls there by incurring network latency because of multiple layers ( Creates multiple nodes of API Network ).
 
 ### Benefits:
 
