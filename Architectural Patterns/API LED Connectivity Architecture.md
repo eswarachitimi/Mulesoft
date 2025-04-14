@@ -23,6 +23,12 @@ _**API Management:**_ APIs are managed, secured, published, and monetized using 
 
 _**Data Transformation and Enrichment:**_ APIs can act as intermediaries, enabling data transformation, enrichment, and validation. 
 
+**More pros outsmarts than the cons**
+
+## Cons
+
+- Net work calls there by incurring Network Latency because of multiple layers.
+
 ### Benefits:
 
 ![Benefits_ - visual selection](https://github.com/user-attachments/assets/4cd785d1-1486-4a6e-9281-f8121893ce3d)
