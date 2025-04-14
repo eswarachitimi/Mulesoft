@@ -23,13 +23,18 @@ _**API Management:**_ APIs are managed, secured, published, and monetized using 
 
 _**Data Transformation and Enrichment:**_ APIs can act as intermediaries, enabling data transformation, enrichment, and validation. 
 
-> **Tbe Pros outsmarts the cons**
+> **The Pros outsmarts the cons**
 
 ### Cons
 
 - Net work calls there by incurring Network Latency because of multiple layers ( creats multiple nodes of API Network ).
 
 ### Benefits:
+
+- Moving for Legacy to Digital Enablement.
+- Abstraction ( Abstracting protocols, security & transformation. All the complex overhead that has to be done to get the data. Consumer knows about the experience API. System API & Process API implementation is abstracted)
+-  Innovation - Experience API is driving this. Multiple consumers can use this
+
 
 ![Benefits_ - visual selection](https://github.com/user-attachments/assets/4cd785d1-1486-4a6e-9281-f8121893ce3d)
 
@@ -44,5 +49,6 @@ _**Data Transformation and Enrichment:**_ APIs can act as intermediaries, enabli
 
 ![image](https://github.com/user-attachments/assets/82152140-bcdb-4578-9536-bdd8f23e97cb)
 
+![image](https://github.com/user-attachments/assets/c57bcf9e-63ee-4055-9ef2-147c966db349)
 
 
