@@ -15,9 +15,9 @@ APIs are created at the system layer and then reused to build higher-level APIs 
 
 ## Three-layer approach:
 
-- **System Layer:** APIs access backend systems and provide a way of insulation.
-- **Process Layer:** These APIs interact with system APIs, providing aggregation, orchestration, and encapsulating business capabilities.
-- **Experience Layer:** Where APIs are exposed and consumed by their intended audience.
+- **System Layer:** APIs access backend systems and provide a way of insulation.  Responsible for data storage and retrieval, this layer involves databases, storage, and APIs that interface with data sources.
+- **Process Layer:** These APIs interact with system APIs, providing aggregation, orchestration, and encapsulating business capabilities. Housing the application’s business logic, this layer processes user input, orchestrates calculations, and manages core functionalities.
+- **Experience Layer:** Where APIs are exposed and consumed by their intended audience. The gateway to user interaction, this layer encompasses user interfaces, web browsers, and mobile apps, focusing on presenting information and gathering input.
   
 _**API Management:**_ APIs are managed, secured, published, and monetized using API management software.
 
