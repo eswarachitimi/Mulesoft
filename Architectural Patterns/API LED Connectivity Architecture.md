@@ -1,7 +1,7 @@
 
 # API-Led Connectivity
 
-_**`API-led connectivity`**_ is a modern approach to integrating applications and data using reusable APIs, replacing point-to-point integrations for a more flexible, scalable, and agile architecture. It focuses on creating well-defined APIs that can be managed, secured, published, and monetized, enabling faster and more efficient integrations. 
+_**`API-led connectivity`**_ is a modern approach to integrating applications and data using reusable APIs, replacing point-to-point integrations for a more flexible, scalable, and agile architecture. It focuses on creating well-defined APIs that can be managed, secured, published, and monetized, enabling faster and more efficient integrations. APIs can act as intermediaries, enabling data transformation, enrichment, and validation.
 
 ![image](https://github.com/user-attachments/assets/fa01b382-77f2-4b16-9f35-191910c54bde)
 
@@ -27,10 +27,6 @@ APIs are created at the system layer and then reused to build higher-level APIs 
 
   These APIs abstract the complexities of underlying systems and provide a user-friendly interface for consuming services. Where APIs are exposed and consumed by their intended audience. The gateway to user interaction, this layer encompasses user interfaces, web browsers, and mobile apps, focusing on presenting information and gathering input. 
 
-_**API Management:**_ APIs are managed, secured, published, and monetized using API management software.
-
-_**Data Transformation and Enrichment:**_ APIs can act as intermediaries, enabling data transformation, enrichment, and validation. 
-
 > **The Pros outsmarts the cons**
 
 ### Cons
@@ -42,7 +38,6 @@ _**Data Transformation and Enrichment:**_ APIs can act as intermediaries, enabli
 - Moving for Legacy to Digital Enablement.
 - Abstraction ( Abstracting protocols, security & transformation. All the complex overhead that has to be done to get the data. Consumer knows about the experience API. System API & Process API implementation is abstracted)
 -  Innovation - Experience API is driving this. Multiple consumers can use this
-
 
 ![Benefits_ - visual selection](https://github.com/user-attachments/assets/4cd785d1-1486-4a6e-9281-f8121893ce3d)
 
