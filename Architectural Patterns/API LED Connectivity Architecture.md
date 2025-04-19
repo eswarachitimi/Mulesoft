@@ -15,6 +15,8 @@ APIs are created at the system layer and then reused to build higher-level APIs 
 
 ## Three-layer approach:
 
+API Led Connectivity talks about three layers like Experience API, Process API and System API. Each layer has its own roles, responsibility and functionality.  
+
 - **System Layer:** `Building Blocks of Integration`
 
   APIs access backend systems. This layer involves creating APIs that expose the functionalities of individual systems, applications, or data sources. These APIs serve as the building blocks for integration and can be reused across various projects. An additional responsibility of System APIs is to expose the data in a common data model so that it can be reused within the enterprise.
