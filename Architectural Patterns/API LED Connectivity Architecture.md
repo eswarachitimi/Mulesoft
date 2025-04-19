@@ -21,11 +21,11 @@ APIs are created at the system layer and then reused to build higher-level APIs 
   
 - **Process Layer:** `Orchestrating Business Goals`
 
-These APIs interact with system APIs, providing aggregation, orchestration, and encapsulating business capabilities.
+  These APIs interact with system APIs, providing aggregation, orchestration, and encapsulating business capabilities.
 
 - **Experience Layer:** `Crafting User-Centric Interfaces`
 
-These APIs abstract the complexities of underlying systems and provide a user-friendly interface for consuming services. Where APIs are exposed and consumed by their intended audience. The gateway to user interaction, this layer encompasses user interfaces, web browsers, and mobile apps, focusing on presenting information and gathering input. 
+  These APIs abstract the complexities of underlying systems and provide a user-friendly interface for consuming services. Where APIs are exposed and consumed by their intended audience. The gateway to user interaction, this layer encompasses user interfaces, web browsers, and mobile apps, focusing on presenting information and gathering input. 
 
 _**API Management:**_ APIs are managed, secured, published, and monetized using API management software.
 
