@@ -15,31 +15,98 @@ APIs are created at the system layer and then reused to build higher-level APIs 
 
 ## Three-layer approach:
 
-API Led Connectivity talks about three layers like Experience API, Process API and System API. Each layer has its own roles, responsibility and functionality.  
+API Led Connectivity talks about three layers like Experience API, Process API and System API. Each layer has its own roles, responsibility and functionality. API Led Connectivity comprises three layers mentioned but every time it is not necessary we require all three layers.
 
-- **System Layer:** `Building Blocks of Integration`
+### System Layer: 
 
-  APIs access backend systems. This layer involves creating APIs that expose the functionalities of individual systems, applications, or data sources. These APIs serve as the building blocks for integration and can be reused across various projects. An additional responsibility of System APIs is to expose the data in a common data model so that it can be reused within the enterprise.
+> `Building Blocks of Integration`
+
+ System API allows you to fetch the raw data from the system of records like JDBC, SAP, Salesforce, AS400 etc. Data fetch from backend systems can be exposed to upstream API in a secure and reliable way. These APIs serve as the building blocks for integration and can be reused across various projects. An additional responsibility of System APIs is to expose the data in a common data model so that it can be reused within the enterprise.
+
+- System API responsible for connecting backend systems and fetching required raw data.
+- Transforming the data fetch from backend systems.
+- Cleaning the raw data from backend systems.
+- Exposing the data to the upstream API (Process or Experience API) in a secure and reliable way.
+- Error Handling. Mapping the errors from backend systems.
+- Below questions needs to be addressed for designing right System APIs
+
+**What will be the core functionality of System API?**
+
+- Do we require System API?
+- How many systems are involved? Do we need to create a System API for each backend system?
+- What kind of security measures need to be taken care of for System APIs?
+- Do we need wrapper around existing System API that is written in non MuleSoft?
+
+**Below list of things needs to be taken care while designing the System API**
+
+- System API generally not exposed publicly and it should be deployed within a private network or private port (e.g. On CloudHub, System API can be deployed on a private port within Anypoint Virtual Private Cloud).
+- Always provide an internal URL to upstream API to communicate with System APIs.
+- There must be one System API for one backend System. In case, if you follow Domain Driven Design there can be multiple system API for one system (e.g. You have a monolithic web service which has operations related to multiple domains, in such a case you can group operations related to domains and create multiple system API as per number of domains).
+- There might be some backend systems that are not ready to pick up heavy traffic. In such cases, guard System API with Spike Control or Rate Limiting policies.
+
+### Process Layer:
+
+> `Orchestrating Business Goals`
+
+ Process API is responsible for orchestrating multiple downstream API (i.e. Collecting the data from multiple downstream API). The core functionality of Process API is to implement business logic, data aggregation, routing etc.
+
+- Exposing the data to the upstream API (Experience) in a secure and reliable way.
+- Responsible for handling business logic, data aggregation, routing etc.
+- Error Handling. Mapping the errors from System APIs.
+- Responsible for orchestration of call to System API (i.e. use of scatter gather components, choice router etc.)
+- Line of Business is responsible for Process API. It is also known as layer of innovation and agility.
+
+**Below questions needs to be addressed for designing right Process APIs**
+
+- What will be the core functionality of the Process API?
+- Do we require Process API?
+- Does Business Logic already exist in backend service (e.g. Stored Procedure on Database having Business Logic)? Do we need to implement Business Logic in the Process Layer? (It is always good best practices to have most of the complex business logic in the backend system if they are capable. In case if backend systems are not able to handle business logic, MuleSoft provides all required components to implement any kind of business logic).
+- Who will be consumers of the Process API? (e.g. Most of the time Process API will be consumed by multiple User Experience API to promote reusability).
+- What security measures need to be taken care of a Process API
+
+**Below list of things needs to be taken care while designing the Process API**
+
+- Process API generally is not exposed publicly and it should be deployed within a private network or private port (e.g. On CloudHub, Process API can be deployed on a private port within Anypoint Virtual Private Cloud). In case, if you want to expose Process API to consumers, you can create API Proxy on top of Process API and ask consumers to connect through API Proxy. In this way, we can stop exposing Process API implementation directly.
+- Always provide an internal URL to upstream internal API to communicate with Process APIs.
+- Process API must be secured by applying security policies like Client Id Enforcement Policies.
   
-- **Process Layer:** `Orchestrating Business Goals`
+### Experience Layer:
 
-  These APIs interact with system APIs, providing aggregation, orchestration, and encapsulating business capabilities.
+> `Crafting User-Centric Interfaces`
 
-- **Experience Layer:** `Crafting User-Centric Interfaces`
+Experience API is the user facing API and it can be reused by different channels like mobile applications, web applications or any other channels. Generally, Experience APIs are channel specific (for example, mobile application can consume mobile API, web application can consume web API etc.). These APIs abstract the complexities of underlying systems and provide a user-friendly interface for consuming services. 
 
-  These APIs abstract the complexities of underlying systems and provide a user-friendly interface for consuming services. Where APIs are exposed and consumed by their intended audience. The gateway to user interaction, this layer encompasses user interfaces, web browsers, and mobile apps, focusing on presenting information and gathering input. 
+- Error Handling. Mapping the errors from Process or System APIs.
+- Consumes Process or System APIs.
+- Perform data transformation according to need to consumers.
+- Expose channel specific API.
 
-> **The Pros outsmarts the cons**
+**Below questions needs to be addressed for designing right Experience APIs**
 
-### Cons
+- What will be the core functionality of the Experience API?
+- Does Experience API have multiple consumers?
+- Do we require Experience API?
+- What security measures need to be taken care of at Experience API?
+- How to secure APIs from DoS or DDoS attacks?
+- Do different consumers have different security requirements?
+
+**Below list of things needs to be taken care while designing the Experience API**
+
+- Experience API must be not responsible for orchestration, routing or any business logic.
+- Experience API must be enabled with strong Authentication and Authorization like OAuth 2.0
+- Experience API must have extra security to avoid DoS, DDoS or any API attacks.
+
+> `pros outsmart the cons`
+
+### Disadvantages
 
 - Network calls there by incurring network latency because of multiple layers ( Creates multiple nodes of API Network ).
 
-### Benefits:
+### Advantages:
 
-- Moving for Legacy to Digital Enablement.
+- Moving from Legacy to Digital Enablement.
 - Abstraction ( Abstracting protocols, security & transformation. All the complex overhead that has to be done to get the data. Consumer knows about the experience API. System API & Process API implementation is abstracted)
--  Innovation - Experience API is driving this. Multiple consumers can use this
+- Innovation - Experience API is driving this. Multiple consumers can use this.
 
 ![Benefits_ - visual selection](https://github.com/user-attachments/assets/4cd785d1-1486-4a6e-9281-f8121893ce3d)
 
