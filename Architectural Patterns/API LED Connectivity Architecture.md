@@ -146,6 +146,14 @@ The Utils Service is not the only example of how you can customise the API-led m
 
 ![image](https://github.com/user-attachments/assets/94f2eac1-4d2a-41b0-bb7b-db7c1b7af821)
 
+![image](https://github.com/user-attachments/assets/63475221-35c7-4d80-ac22-28a2e368dbcf)
+
+![image](https://github.com/user-attachments/assets/940b2e39-382b-41ab-808e-00fca736ff37)
+
+![image](https://github.com/user-attachments/assets/77a222e0-7cb7-4ec8-8172-4cf49e02c40f)
+
+![image](https://github.com/user-attachments/assets/dce4f0b4-e921-42db-8ed5-b5020148aba2)
+
 ## Legacy Bank -Problems
 
 ![image](https://github.com/user-attachments/assets/4e2d0e96-c4ae-4c0f-a35e-ff47d16a07d6)
