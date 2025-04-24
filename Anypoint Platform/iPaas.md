@@ -46,10 +46,6 @@ Sources 📝
 
 1️⃣https://lnkd.in/dccae7PT
 
-2️⃣https://lnkd.in/g7zyxV8p
-
-3️⃣https://lnkd.in/gsNEHgaa
-
 👉🏼 Workato:
 
 👉🏼 Dell Bhoomi:
