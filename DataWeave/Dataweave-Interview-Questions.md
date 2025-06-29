@@ -15,3 +15,10 @@ https://medium.com/@myid535/dataweave-100-solved-practice-interview-problems-275
 
 # 5. Filter Even Values out from any array
 ![image](https://github.com/user-attachments/assets/e6ae12a3-aff7-4953-9c62-276b14d3136b)
+
+# 6. Print Last x characters of a number or String
+![image](https://github.com/user-attachments/assets/68f240fe-f7d7-44ff-a7b9-7e458f45b2c9)
+
+# 7. Count the Number of Characters in a String
+![image](https://github.com/user-attachments/assets/c791a780-9f3f-4384-bdea-731e23514276)
+
