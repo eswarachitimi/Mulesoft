@@ -8,6 +8,15 @@ DataWeave is a programming language designed for transforming data. It is MuleSo
 
 * DataWeave scripts act on data (payload ) in the Mule event.
 
+### DW Script:
+```
+%dw 2.0
+input payload json
+output csv header=false
+---
+payload
+```
+
 Notice in the dw script that there are three lines, a line with three dashes, then one more line. The first three lines of the script contain *directives*. The first directive, which is in every DataWeave file, defines which version the script is using.
 
 The second and third lines contain the input and output directives. They each have their own form, which allows naming the inputs and defining reader and writer properties:
