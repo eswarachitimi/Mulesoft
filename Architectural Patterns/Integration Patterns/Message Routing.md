@@ -26,7 +26,7 @@ How can a component avoid receiving uninteresting messages?
 
 Use a special kind of Message Router, a Message Filter, to eliminate undesired messages from a channel based on a set of criteria.
 
-# 	Dynamic Router
+# Dynamic Router
 How can you avoid the dependency of the router on all possible destinations while maintaining its efficiency?
 
 <img width="494" height="243" alt="image" src="https://github.com/user-attachments/assets/43dc1c56-61a7-4980-8779-7a8fc213175f" />
@@ -55,7 +55,7 @@ How do we combine the results of individual, but related messages so that they c
 
 Use a stateful filter, an Aggregator, to collect and store individual messages until a complete set of related messages has been received. Then, the Aggregator publishes a single message distilled from the individual messages.
 
-# 	Resequencer
+# Resequencer
 
 How can we get a stream of related but out-of-sequence messages back into the correct order?
 
@@ -63,10 +63,43 @@ How can we get a stream of related but out-of-sequence messages back into the co
 
 Use a stateful filter, a Resequencer, to collect and re-order messages so that they can be published to the output channel in a specified order.
 
-# 	Composed Message Processor
+# Composed Message Processor
 
 How can you maintain the overall message flow when processing a message consisting of multiple elements, each of which may require different processing?
 
 <img width="606" height="220" alt="image" src="https://github.com/user-attachments/assets/8fe05d0c-2d73-48cf-b754-2d8dfdd8ee10" />
 
 Use Composed Message Processor to process a composite message. The Composed Message Processor splits the message up, routes the sub-messages to the appropriate destinations and re-aggregates the responses back into a single message.
+
+# Scatter-Gather
+
+How do you maintain the overall message flow when a message needs to be sent to multiple recipients, each of which may send a reply?
+
+<img width="377" height="226" alt="image" src="https://github.com/user-attachments/assets/3d34b1b8-a7ab-4d55-a1c2-c4102005d9a7" />
+
+Use a Scatter-Gather that broadcasts a message to multiple recipients and re-aggregates the responses back into a single message
+
+# Routing Slip
+
+How do we route a message consecutively through a series of processing steps when the sequence of steps is not known at design-time and may vary for each message?
+
+<img width="429" height="197" alt="image" src="https://github.com/user-attachments/assets/05382894-7056-4b2a-ad77-903b9f75ca46" />
+
+Attach a Routing Slip to each message, specifying the sequence of processing steps. Wrap each component with a special message router that reads the Routing Slip and routes the message to the next component in the list.
+
+# Process Manager
+
+How do we route a message through multiple processing steps when the required steps may not be known at design-time and may not be sequential?
+
+<img width="315" height="157" alt="image" src="https://github.com/user-attachments/assets/5d96f9fc-df66-42a8-bc3b-30b255516d85" />
+
+Use a central processing unit, a Process Manager, to maintain the state of the sequence and determine the next processing step based on intermediate results.
+
+# Message Broker
+
+How can you decouple the destination of a message from the sender and maintain central control over the flow of messages?
+
+<img width="350" height="204" alt="image" src="https://github.com/user-attachments/assets/2214a7b1-a27b-44d7-ad86-9f927b4e4d51" />
+
+Use a central Message Broker that can receive messages from multiple destinations, determine the correct destination and route the message to the correct channel. Implement the internals of the Message Broker using the design patterns presented in this chapter.
+
