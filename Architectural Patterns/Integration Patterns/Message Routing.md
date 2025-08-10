@@ -25,3 +25,48 @@ How can a component avoid receiving uninteresting messages?
 <img width="576" height="107" alt="image" src="https://github.com/user-attachments/assets/208e477b-66ce-43b8-be56-25b6bfd162ca" />
 
 Use a special kind of Message Router, a Message Filter, to eliminate undesired messages from a channel based on a set of criteria.
+
+# 	Dynamic Router
+How can you avoid the dependency of the router on all possible destinations while maintaining its efficiency?
+
+<img width="494" height="243" alt="image" src="https://github.com/user-attachments/assets/43dc1c56-61a7-4980-8779-7a8fc213175f" />
+
+Use a Dynamic Router, a Router that can self-configure based on special configuration messages from participating destinations.
+
+# Recipient List
+How do we route a message to a list of dynamically specified recipients?
+
+<img width="462" height="197" alt="image" src="https://github.com/user-attachments/assets/25698797-94a7-42c1-b155-fcc57b3fe9e7" />
+
+Define a channel for each recipient. Then use a Recipient List to inspect an incoming message, determine the list of desired recipients, and forward the message to all channels associated with the recipients in the list.
+
+# Splitter
+How can we process a message if it contains multiple elements, each of which may have to be processed in a different way?
+
+<img width="477" height="126" alt="image" src="https://github.com/user-attachments/assets/62c12455-aa67-4304-b0f6-e64d21e8f018" />
+
+Use a Splitter to break out the composite message into a series of individual messages, each containing data related to one item.
+
+# Aggregator
+
+How do we combine the results of individual, but related messages so that they can be processed as a whole?
+
+<img width="450" height="134" alt="image" src="https://github.com/user-attachments/assets/9b0beaa1-a5d3-42d7-abf6-478b0f475499" />
+
+Use a stateful filter, an Aggregator, to collect and store individual messages until a complete set of related messages has been received. Then, the Aggregator publishes a single message distilled from the individual messages.
+
+# 	Resequencer
+
+How can we get a stream of related but out-of-sequence messages back into the correct order?
+
+<img width="403" height="106" alt="image" src="https://github.com/user-attachments/assets/77992c98-445f-4ae2-a3fe-972bd3b616b0" />
+
+Use a stateful filter, a Resequencer, to collect and re-order messages so that they can be published to the output channel in a specified order.
+
+# 	Composed Message Processor
+
+How can you maintain the overall message flow when processing a message consisting of multiple elements, each of which may require different processing?
+
+<img width="606" height="220" alt="image" src="https://github.com/user-attachments/assets/8fe05d0c-2d73-48cf-b754-2d8dfdd8ee10" />
+
+Use Composed Message Processor to process a composite message. The Composed Message Processor splits the message up, routes the sub-messages to the appropriate destinations and re-aggregates the responses back into a single message.
