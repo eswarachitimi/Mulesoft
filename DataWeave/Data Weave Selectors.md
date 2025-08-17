@@ -63,7 +63,7 @@ To retrive uri `employees.Envelope.#.uri` & to retrive prefix `employees.Envelop
 
 ### Filter Selector Example
 
-if condition not satified, filter selector returns the `null` value.
+if condition not satisfied, filter selector returns the `null` value.
 
 <img width="1278" height="656" alt="image" src="https://github.com/user-attachments/assets/7d7e18fa-9327-4a68-91db-97072c905c55" />
 
