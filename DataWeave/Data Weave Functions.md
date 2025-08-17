@@ -1,6 +1,6 @@
 # DataWeave Functions
 
-You can define your own DataWeave functions using the fun declaration in the header of a DataWeave script.
+You can define your own DataWeave functions using the `fun` declaration in the header of a DataWeave script.
 
 <img width="978" height="601" alt="image" src="https://github.com/user-attachments/assets/fa316740-0945-4c0e-83c1-1bc586797e9f" />
 
