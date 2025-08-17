@@ -9,7 +9,11 @@
 
 ![image](https://github.com/user-attachments/assets/0f331e96-9c81-453f-baa4-0910043f9a12)
 
+### Reading XML in Data Weave
+
 <img width="1906" height="887" alt="image" src="https://github.com/user-attachments/assets/604715f4-96cc-44a8-8ac4-5fb8f511e93f" />
+
+### XML Name space & attribute Vlaue Selector Examples
 
 A namespace helps to avoid naming conflicts when an XML document combines elements or attributes from different XML vocabularies or schemas.
 
@@ -29,3 +33,6 @@ To retrive uri `employees.Envelope.#.uri` & to retrive prefix `employees.Envelop
 
 <img width="1797" height="809" alt="image" src="https://github.com/user-attachments/assets/1abd28f3-e2e9-4c56-b859-eae2131aeef9" />
 
+### Dynamic Vlaue Selector Examples
+
+<img width="1151" height="432" alt="image" src="https://github.com/user-attachments/assets/d3f6394b-6ed8-45dc-9529-25d1bd5e12a6" />
