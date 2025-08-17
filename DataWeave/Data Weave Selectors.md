@@ -69,6 +69,7 @@ if condition not satisfied, filter selector returns the `null` value.
 
 <img width="1139" height="626" alt="image" src="https://github.com/user-attachments/assets/0ce98827-0df5-48d1-84ed-f68d87af0653" />
 
+
 Control + space in dataweave shows all the predifinied variables. Commonly used variables include `attributes`, `payload`, and `vars`, the main parts of the Mule event.
 
 https://docs.mulesoft.com/dataweave/latest/dataweave-variables-context
