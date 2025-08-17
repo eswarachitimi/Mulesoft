@@ -59,4 +59,11 @@ To retrive uri `employees.Envelope.#.uri` & to retrive prefix `employees.Envelop
 
 ### Key Assert Selector Example
 
-<img width="901" height="472" alt="image" src="https://github.com/user-attachments/assets/35279c01-7e24-469a-9c61-d37db4429ece" />
+<img width="1223" height="647" alt="image" src="https://github.com/user-attachments/assets/d4a85a12-acf0-48b9-a436-b8386cf4a252" />
+
+### Filter Selector Example
+
+if condition not satified, filter selector returns the `null` value.
+
+<img width="1278" height="656" alt="image" src="https://github.com/user-attachments/assets/7d7e18fa-9327-4a68-91db-97072c905c55" />
+
