@@ -19,3 +19,7 @@
 ## Example -5
 
 ![image](https://github.com/user-attachments/assets/c67375ef-64f3-41f2-a135-f7c39cb28fda)
+
+## Example -6
+
+<img width="1916" height="582" alt="image" src="https://github.com/user-attachments/assets/22737a84-1b40-4e9a-b006-5f643e41ae13" />
