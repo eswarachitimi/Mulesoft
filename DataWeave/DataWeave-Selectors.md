@@ -13,7 +13,7 @@
 
 A namespace helps to avoid naming conflicts when an XML document combines elements or attributes from different XML vocabularies or schemas.
 
-A namespace is declared using the xmlns attribute, optionally with a prefix, and assigned a unique URI. Prefixed Namespace Declaration.
+A namespace is declared using the xmlns attribute, optionally with a `prefix`, and assigned a unique URI. Prefixed Namespace Declaration.
 
 ```
     <root xmlns:prefix="http://example.com/namespaceURI">
@@ -22,3 +22,7 @@ A namespace is declared using the xmlns attribute, optionally with a prefix, and
  ```
 
 In XML, attributes are used to add metadata to elements. For example, in `<book category="fiction">`, the category attribute provides additional information about the book element. 
+
+To retrive uri `employees.Envelope.#.uri` & to retrive prefix `employees.Envelope.#.prefix`
+
+<img width="1504" height="363" alt="image" src="https://github.com/user-attachments/assets/5b2823b0-851d-4ab3-9038-7a362031b123" />
