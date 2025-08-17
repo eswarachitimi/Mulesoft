@@ -36,3 +36,27 @@ To retrive uri `employees.Envelope.#.uri` & to retrive prefix `employees.Envelop
 ### Dynamic Vlaue Selector Examples
 
 <img width="1151" height="432" alt="image" src="https://github.com/user-attachments/assets/d3f6394b-6ed8-45dc-9529-25d1bd5e12a6" />
+
+<img width="1230" height="521" alt="image" src="https://github.com/user-attachments/assets/a1105c90-53bf-414d-a381-6f84cc0b17b8" />
+
+<img width="1521" height="711" alt="image" src="https://github.com/user-attachments/assets/8caafb3c-cfc6-41f3-9c02-0d22195b2766" />
+
+### Descendant Selector Example
+
+<img width="1524" height="538" alt="image" src="https://github.com/user-attachments/assets/e797815a-785e-4fd6-aced-5073b79958c6" />
+
+### Key-Value pair Selector Example
+
+<img width="1242" height="676" alt="image" src="https://github.com/user-attachments/assets/2baa3768-b597-46a5-a52a-d38e96e23e08" />
+
+### Range Selector Example
+
+<img width="1233" height="635" alt="image" src="https://github.com/user-attachments/assets/54420da1-948d-4c80-bb6c-452e39e887a8" />
+
+### Key Present Selector Example
+
+<img width="1126" height="540" alt="image" src="https://github.com/user-attachments/assets/efb4e0fc-b20c-42af-b631-1a0097a3137f" />
+
+### Key Assert Selector Example
+
+<img width="901" height="472" alt="image" src="https://github.com/user-attachments/assets/35279c01-7e24-469a-9c61-d37db4429ece" />
