@@ -9,3 +9,6 @@
 
 ![image](https://github.com/user-attachments/assets/0f331e96-9c81-453f-baa4-0910043f9a12)
 
+<img width="1906" height="887" alt="image" src="https://github.com/user-attachments/assets/604715f4-96cc-44a8-8ac4-5fb8f511e93f" />
+
+In XML, attributes are used to add metadata to elements. For example, in `<book category="fiction">`, the category attribute provides additional information about the book element. 
