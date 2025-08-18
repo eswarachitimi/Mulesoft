@@ -77,6 +77,6 @@ Concatenates two values.
 
 This version of `++` concatenates the elements of two arrays into a new array. Other versions act on strings, objects, and the various date and time formats that DataWeave supports.
 
-<img width="1642" height="861" alt="image" src="https://github.com/user-attachments/assets/62833202-895a-49ab-ba7a-630351946774" />
+<img width="1531" height="833" alt="image" src="https://github.com/user-attachments/assets/f1cdadae-f927-48c8-a2a3-cc8fb4c8ac91" />
 
 <img width="1217" height="304" alt="image" src="https://github.com/user-attachments/assets/6d257655-68c8-4c1d-a60e-9156750df0b0" />
