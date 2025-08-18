@@ -23,3 +23,7 @@
 ## Example -6
 
 <img width="1916" height="582" alt="image" src="https://github.com/user-attachments/assets/22737a84-1b40-4e9a-b006-5f643e41ae13" />
+
+## Example -7
+
+<img width="1916" height="432" alt="image" src="https://github.com/user-attachments/assets/f0cd60a5-4500-4619-a18b-9a72ce21fb25" />
