@@ -67,6 +67,6 @@ There are several ways to import a module or elements in it:
 
 - Import specific elements from a module, for example: `import myFunc from modules::MyModule`. In this case, you do not need to include the name of the module when you call the element. For example: `myFunc("dataweave") ++ "name"` works. You can import multiple elements from the module like this, for example: `import myFunc someOtherFunction from modules::MyModule` (assuming both myFunc and someOtherFunction are defined in the module).
 
-## Refer below image for Function over riding, function overloading and  passing function as parameter to function examples -
+## Function over riding, function overloading and  passing function as parameter to function examples
 
 <img width="1175" height="521" alt="image" src="https://github.com/user-attachments/assets/6f9ba1b9-942e-4881-8d4a-93ea8e8037e7" />
