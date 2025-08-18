@@ -27,3 +27,7 @@
 ## Example -7
 
 <img width="1916" height="432" alt="image" src="https://github.com/user-attachments/assets/f0cd60a5-4500-4619-a18b-9a72ce21fb25" />
+
+## Example -8
+
+<img width="1894" height="650" alt="image" src="https://github.com/user-attachments/assets/d92f7e6a-a230-4db7-9ef6-f70f3c09bf67" />
