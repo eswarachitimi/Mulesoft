@@ -22,7 +22,9 @@ You write modules and mapping files in a DataWeave Language (.dwl) file and impo
 
 - Custom modules can define functions, variables, types, and namespaces. You can import these modules into a DataWeave script to use the features.
 
-<img width="1007" height="745" alt="image" src="https://github.com/user-attachments/assets/bac382e2-3555-45e2-8e6f-d71043c5b010" />
+## Creating and Using DataWeave Mapping Files
+
+<img width="1014" height="650" alt="image" src="https://github.com/user-attachments/assets/c6184927-da2a-4ca2-8590-c3d8f4c930ae" />
 
 <img width="1005" height="968" alt="image" src="https://github.com/user-attachments/assets/6ddffde9-501e-4c75-8ea0-760b7ba6dfae" />
 
