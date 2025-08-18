@@ -70,3 +70,6 @@ There are several ways to import a module or elements in it:
 ## Function over riding, function overloading and  passing function as parameter to function examples
 
 <img width="1175" height="521" alt="image" src="https://github.com/user-attachments/assets/6f9ba1b9-942e-4881-8d4a-93ea8e8037e7" />
+
+## Concat (++) Function
+
