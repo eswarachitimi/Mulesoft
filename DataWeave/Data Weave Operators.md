@@ -38,8 +38,8 @@ The update syntax is as follows:
 
 - `[if(<conditional_expression>)]?` If conditional_expression returns true, the script updates the value. Use of a conditional expression is optional.
 
-[!] marks the selector as an upsert. If the expression doesn’t find a match, the ! makes the update operator create all the required elements and insert the new value.
+- [!] marks the selector as an upsert. If the expression doesn’t find a match, the ! makes the update operator create all the required elements and insert the new value.
 
-update_expression supports multiple case expressions.
+- update_expression supports multiple case expressions.
 
-The update operator doesn’t mutate the existing value. Instead, the operator creates a new value with the updated expressions.
+> [!] The update operator doesn’t mutate the existing value. Instead, the operator creates a new value with the updated expressions.
