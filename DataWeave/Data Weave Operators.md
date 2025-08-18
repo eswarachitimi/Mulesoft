@@ -42,4 +42,4 @@ The update syntax is as follows:
 
 - update_expression supports multiple case expressions.
 
-> [!] The update operator doesn’t mutate the existing value. Instead, the operator creates a new value with the updated expressions.
+> [!NOTE] The update operator doesn’t mutate the existing value. Instead, the operator creates a new value with the updated expressions.
