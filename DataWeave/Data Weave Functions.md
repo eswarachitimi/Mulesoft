@@ -24,11 +24,40 @@ You write modules and mapping files in a DataWeave Language (.dwl) file and impo
 
 <img width="1007" height="745" alt="image" src="https://github.com/user-attachments/assets/bac382e2-3555-45e2-8e6f-d71043c5b010" />
 
-<img width="1012" height="509" alt="image" src="https://github.com/user-attachments/assets/dd41e708-07fc-4934-8eef-0ccfff7f3689" />
-
 <img width="1005" height="968" alt="image" src="https://github.com/user-attachments/assets/6ddffde9-501e-4c75-8ea0-760b7ba6dfae" />
 
-\n There are several ways to import a module or elements in it:
+## Creating and Using a Custom Module
+
+A custom module file can only contain `var`, `fun`, `type`, and `ns` declarations, for example:
+
+```
+%dw 2.0
+var name = "MyData"
+fun myFunc(myInput: String) = myInput ++ "_"
+type User = {
+    name: String,
+    lastname: String
+}
+ns mynamespace http://acme.com/bar
+```
+
+When you import a custom module into another DataWeave script, any functions, variables, types, and namespaces defined in the module become available for use in the DataWeave body. In the next example, a DataWeave script:
+
+Imports the module `MyModule` through the import directive in the header. In this case, the imported module is stored in a Studio project path `src/main/resources/modules/MyModule.dwl`
+
+Calls a function in MyModule by using `MyModule::myFunc("dataweave")`.
+
+Example: Importing and Using a Custom DataWeave Module
+
+```
+%dw 2.0
+import modules::MyModule
+output application/json
+---
+MyModule::myFunc("dataweave") ++ "name"
+```
+
+There are several ways to import a module or elements in it:
 
 - Import the module, for example: `import modules::MyModule`. In this case, you must include the name of the module when you call the element (here, a function) in it, for example: `MyModule::myFunc`.
 
