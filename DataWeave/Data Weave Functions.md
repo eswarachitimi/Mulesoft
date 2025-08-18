@@ -2,7 +2,25 @@
 
 You can define your own DataWeave functions using the `fun` declaration in the header of a DataWeave script.
 
-<img width="978" height="601" alt="image" src="https://github.com/user-attachments/assets/fa316740-0945-4c0e-83c1-1bc586797e9f" />
+## DataWeave Function Definition Syntax
+
+<img width="966" height="482" alt="image" src="https://github.com/user-attachments/assets/9823eff2-6dcb-4401-b3f4-460c7071807a" />
+
+## Example Function Definitions
+
+<img width="969" height="494" alt="image" src="https://github.com/user-attachments/assets/01e66030-f1c0-46a6-a554-a9d3377d2511" />
+
+## Type Constraint Definition
+
+<img width="987" height="595" alt="image" src="https://github.com/user-attachments/assets/b3f6d604-2d54-4140-9040-0c6ab1a7de3a" />
+
+## Custom Modules
+
+In addition to using the built-in DataWeave function modules (such as `dw::Core` and `dw::Crypto`), you can also create and use custom modules and mapping files. The examples demonstrate common data extraction and transformation approaches.
+
+You write modules and mapping files in a DataWeave Language (.dwl) file and import into your Mule app through DataWeave scripts in Mule components. Both modules and mapping files are useful when you need to reuse the same functionality or feature over and over again.
+
+- Custom modules can define functions, variables, types, and namespaces. You can import these modules into a DataWeave script to use the features.
 
 <img width="1007" height="745" alt="image" src="https://github.com/user-attachments/assets/bac382e2-3555-45e2-8e6f-d71043c5b010" />
 
