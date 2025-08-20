@@ -90,3 +90,24 @@ This version of `++` concatenates the elements of two arrays into a new array. O
 Turns a set of subarrays (such as `[ [1,2,3], [4,5,[6]], [], [null] ]`) into a single, flattened array (such as [ 1, 2, 3, 4, 5, [6], null ]). The flatten function convert the array of arrays into a single array with all values.
 > [!NOTE]
 > Note that it flattens only the first level of subarrays and omits empty subarrays.
+
+## Map Function 
+
+Iterates over items in an array and outputs the results into a new array.
+
+<img width="1295" height="328" alt="image" src="https://github.com/user-attachments/assets/b546f957-cd4d-45f6-b398-61fcce4526bb" />
+
+## MapObject Function
+
+Iterates over an object using a mapper that acts on keys, values, or indices of that object.
+
+<img width="1227" height="389" alt="image" src="https://github.com/user-attachments/assets/cc558cdc-ff5b-4643-bf02-d4b8955706c6" />
+
+<img width="1307" height="601" alt="image" src="https://github.com/user-attachments/assets/118625fe-df07-4a97-b0c1-7cd9d7e82835" />
+
+<img width="1390" height="591" alt="image" src="https://github.com/user-attachments/assets/46f45771-3491-4bd9-8960-3187a3a794ea" />
+
+
+
+
+
