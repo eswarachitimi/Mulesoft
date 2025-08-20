@@ -80,3 +80,13 @@ This version of `++` concatenates the elements of two arrays into a new array. O
 <img width="1531" height="833" alt="image" src="https://github.com/user-attachments/assets/f1cdadae-f927-48c8-a2a3-cc8fb4c8ac91" />
 
 <img width="1217" height="304" alt="image" src="https://github.com/user-attachments/assets/6d257655-68c8-4c1d-a60e-9156750df0b0" />
+
+## --, zip & unzip Functions
+
+<img width="1347" height="735" alt="image" src="https://github.com/user-attachments/assets/cf007bd0-8fc0-4fde-952e-7edfd76c4cd1" />
+
+## Flatten Function
+
+Turns a set of subarrays (such as `[ [1,2,3], [4,5,[6]], [], [null] ]`) into a single, flattened array (such as [ 1, 2, 3, 4, 5, [6], null ]). The flatten function convert the array of arrays into a single array with all values.
+> [!NOTE]
+> Note that it flattens only the first level of subarrays and omits empty subarrays.
