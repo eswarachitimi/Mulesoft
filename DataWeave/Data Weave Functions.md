@@ -107,6 +107,8 @@ Iterates over an object using a mapper that acts on keys, values, or indices of 
 
 <img width="1390" height="591" alt="image" src="https://github.com/user-attachments/assets/46f45771-3491-4bd9-8960-3187a3a794ea" />
 
+## Recursion on Functions
+
 
 
 
