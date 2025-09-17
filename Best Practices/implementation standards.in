@@ -1,13 +1,22 @@
-Design & Architecture
-API-Led Connectivity
-: Design APIs into three layers—Experience, Process, and System—to promote reusability, scalability, and modularity across the organization. 
-Contract-First Approach
-: Begin by designing the API using RAML or OpenAPI to create a clear contract before implementation, which consumers can then use. 
-Modular Design
-: Adopt a microservices architecture and design APIs using modular components and reusable schemas. 
-Versioning
-: Implement semantic versioning to manage changes and ensure backward compatibility for your APIs. 
-Coding Practices
+## Design & Architecture
+### API-Led Connectivity
+
+Design APIs into three layers—Experience, Process, and System—to promote reusability, scalability, and modularity across the organization. 
+
+### Contract-First Approach
+
+Begin by designing the API using RAML or OpenAPI to create a clear contract before implementation, which consumers can then use. 
+
+### Modular Design
+
+Adopt a microservices architecture and design APIs using modular components and reusable schemas. 
+
+### Versioning
+
+Implement semantic versioning to manage changes and ensure backward compatibility for your APIs. 
+
+## Coding Practices
+
 Modularize Logic
 : Separate reusable logic into subflows and keep error handling in dedicated flows to improve maintainability. 
 Avoid Hardcoding
