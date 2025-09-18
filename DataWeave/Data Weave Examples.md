@@ -1,6 +1,7 @@
 ## Example -1
 
-Input -[
+Input -
+[
  {
      "key" : "name",
      "value": "ram"
