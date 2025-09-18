@@ -16,7 +16,32 @@ Input -[
 
 ## Example -2
 
-![image](https://github.com/user-attachments/assets/2367cfee-d4f6-4b88-a123-0e97ed4cb677)
+Input -
+
+[
+ {
+     "Name" : "Srinu",
+     "Marks": "80"
+ },
+ {
+     "Name" : "Balaji",
+     "Marks": "80"
+ },
+ {
+     "Name" : "Ramu",
+     "Marks": "90"
+ },
+ {
+     "Name" : "Krishna",
+     "Marks": "90"
+ },
+ {
+     "Name" : "Raj",
+     "Marks": "70"
+ }
+]
+
+<img width="1919" height="810" alt="image" src="https://github.com/user-attachments/assets/762da755-6cb5-4a9c-8c4c-b53bb467bfca" />
 
 ## Example -3
 
