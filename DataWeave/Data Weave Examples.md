@@ -1,6 +1,18 @@
 ## Example -1
 
-![image](https://github.com/user-attachments/assets/418bf7a0-be55-463c-be5e-18c98a667e78)
+Input -[
+ {
+     "key" : "name",
+     "value": "ram"
+ },
+ {
+     "key" : "id",
+     "value": "543"
+ }
+]
+
+<img width="1919" height="466" alt="image" src="https://github.com/user-attachments/assets/5d15e1fb-9bc6-4c11-a7f9-a3a021d9750d" />
+
 
 ## Example -2
 
