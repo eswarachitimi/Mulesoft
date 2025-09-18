@@ -31,3 +31,16 @@
 ## Example -8
 
 <img width="1894" height="650" alt="image" src="https://github.com/user-attachments/assets/d92f7e6a-a230-4db7-9ef6-f70f3c09bf67" />
+
+## Example -9
+
+Input -
+
+[
+ ["name","age","city"],
+ ["Alice",30,"New York"],
+ ["Bob",28,"LA"],
+ ["Charlie",35,"Chicago"]
+]
+
+<img width="1919" height="756" alt="image" src="https://github.com/user-attachments/assets/b9a0e975-f89c-4cc2-8eb7-a7251b3f5045" />
