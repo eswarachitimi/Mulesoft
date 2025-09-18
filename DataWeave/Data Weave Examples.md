@@ -46,9 +46,29 @@ Input -
 
 ## Example -3
 
-![image](https://github.com/user-attachments/assets/7431129b-a974-4ed0-868a-a839ff15484a)
+Input -
 
-![image](https://github.com/user-attachments/assets/f35e7e72-acbe-4a79-a614-e64952502a6f)
+[
+ {
+     "Fruit" : "Apple",
+     "Quantity": "14"
+ },
+ {
+      "Fruit" : "Orange",
+     "Quantity": "32"
+ },
+ {
+     "Fruit" : "Apple",
+     "Quantity": "16"
+ },
+ {
+     "Fruit" : "Orange",
+     "Quantity": "28"
+ }
+]
+
+<img width="1919" height="664" alt="image" src="https://github.com/user-attachments/assets/a0bb498d-1612-4153-bd4a-1220d66b1ad8" />
+
 
 ## Example -4
 
