@@ -73,3 +73,34 @@ Set up proactive logging and alerting systems to monitor key performance metrics
 ### Asynchronous Logging
 
 Use asynchronous logging for production environments to avoid impacting performance, with an appropriate minimum log level (e.g., WARN). 
+
+# Business app complexity: 
+
+Please consider for you application categorization below definitions. Use cases are not exclusive. 
+
+## Simple 
+
+- Sequential operations on single payloads with little or no routing logic
+- Simple data transformation logic
+- Small payloads < 100 KB
+- Common use cases: API proxies, Experience APIs, System APIs with CRUD operations to single backends systems. 
+
+## Medium: 
+
+- Orchestration of between 3 and 5 systems/services with routing logic
+- Medium-complexity transformation logic
+- Small to Medium payloads < 1MB.
+- Common use cases: Experience APIs, Process APIs, System APIs with CRUD operations to backends systems with transactions management and/or low-to-medium memory demanding connectors.
+  
+## Complex 
+
+- Orchestration of between 5 and 10 systems/services with data enrichment and aggregation
+-  Complex transformation logic or big payloads processings
+- Medium to Big payloads < 10MB
+- Common use cases: Process APIs, System APIs with CRUD operations to backends systems with transactions management and/or medium-high memory demanding connectors. 
+
+## Very Complex 
+- Orchestration of more than 10 systems/services with data enrichment and aggregation
+- Very complex transformation logic with big payloads processing
+- Very Big Payloads > 10 MB < 1 GB
+- Common use cases: Process APIs, System APIs with CRUD operations to backends systems with transactions management and/or high memory demanding connectors.
