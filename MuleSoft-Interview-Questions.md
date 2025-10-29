@@ -1,32 +1,45 @@
 # Core MuleSoft concepts
 
-### MuleSoft and Mule ESB: 
+### MuleSoft and Mule ESB:
+
 What is MuleSoft, what is Mule ESB, and what are their key differences?
-### Mule runtime: 
+
+### Mule runtime:
+
 What is the Mule runtime engine, and what is its role?
-### Flows: 
+
+### Flows:
+
 What is a flow, and how do you create one?
-### Connectors: 
+
+### Connectors:
+
 What are connectors, and what is their purpose?
-### Message processing: 
+
+### Message processing:
+
 What is a message processor, and how do you handle inbound and outbound properties? 
 
 # Data transformation
 
-### DataWeave: 
-What is DataWeave, and what is its role in MuleSoft? 
+### DataWeave:
+
+What is DataWeave, and what is its role in MuleSoft?
+
 Mule Expression Language (MEL): How does DataWeave differ from MEL?
 
 ### DataWeave examples:
 
 # Error handling and deployment
 
-How do you implement error handling in Mule 4? What are some common error handling patterns? 
+How do you implement error handling in Mule 4? What are some common error handling patterns?
+
 How do you handle and raise exceptions in a Mule flow? 
 
 # Deployment & Runtime Manager
 
 How do you deploy a Mule application, and what are the different deployment options?
+
 What is the role of Runtime Manager, and how do you mask properties? 
 
 # API and integration
@@ -38,7 +51,9 @@ What is the API-led connectivity approach?
 ### RAML & APIs:
 
 What is an API in MuleSoft? How do you define an API specification using RAML? 
+
 When would you use REST vs. SOAP APIs? 
+
 How do you test APIs? What is the purpose of tools like Anypoint Exchange and API Console?
 
 # Experienced-level questions
