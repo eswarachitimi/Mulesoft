@@ -1,6 +1,6 @@
 # Enterprise Software Overview
 
-Enterprise software is large-scale computer software designed to meet the complex, operational needs of organizations rather than individual consumers.
+Enterprise software is large-scale computer software designed to meet the complex, operational needs of organizations rather than individual consumers. also known as enterprise application software (EAS)
 
 ---
 
